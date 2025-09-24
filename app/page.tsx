@@ -1,16 +1,28 @@
-"use client";
+'use client';
 import React, { useMemo, useState } from "react";
 import { Battery, Recycle, FlaskConical } from "lucide-react";
 
 // ---- Advanced Battery & Cathode Materials Lab (ABCML), Inha University ----
 // TailwindCSS is assumed in the environment.
 
-const Section = ({ id, title, subtitle, children }) => (
+type SectionProps = {
+  id: string;
+  title: string;
+  subtitle?: string;
+  children: React.ReactNode;
+};
+
+const Section = ({ id, title, subtitle, children }: SectionProps) => (
   <section id={id} className="scroll-mt-24 py-16" aria-labelledby={`${id}-title`}>
     <div className="max-w-6xl mx-auto px-4">
-      <h2 id={`${id}-title`} className="text-2xl md:text-3xl font-bold tracking-tight">{title}</h2>
-      {subtitle && <p className="mt-2 text-sm md:text-base text-gray-600">{subtitle}</p>}
-      <div className="mt-8">{children}</div>
+      <h2
+        id={`${id}-title`}
+        className="text-2xl md:text-3xl font-bold tracking-tight"
+      >
+        {title}
+      </h2>
+      {subtitle && <p className="mt-2 text-lg text-gray-600">{subtitle}</p>}
+      {children}
     </div>
   </section>
 );
@@ -46,25 +58,29 @@ const Hero = () => (
           </div>
         </div>
         <div className="aspect-[4/3] bg-white rounded-2xl border shadow-sm p-4 flex items-center justify-center">
-          <img src="/abcml-logo.png" alt="ABCML Logo" className="max-h-full max-w-full object-contain" />
+          <img src="abcml-logo.png" alt="ABCML Logo" className="max-h-full max-w-full object-contain" />
         </div>
       </div>
     </div>
   </div>
 );
-
-const ResearchCard = ({ title, body, icon: Icon }) => (
+type ResearchCardProps = {
+  title: string;
+  body: string;
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+};
+const ResearchCard = ({ title, body, icon: Icon }: ResearchCardProps) => (
   <div className="rounded-2xl border p-5 shadow-sm bg-white flex flex-col items-start">
     {Icon && <Icon className="w-8 h-8 text-sky-600 mb-3" />}
     <h3 className="font-semibold text-lg">{title}</h3>
-    <p className="mt-2 text-sm text-gray-700 leading-relaxed">{body}</p>
+    <p className="mt-2 text-gray-600">{body}</p>
   </div>
 );
 
 const Professor = () => (
   <div className="grid md:grid-cols-[280px_1fr] gap-8 items-start">
     <div className="rounded-2xl border overflow-hidden bg-white shadow-sm">
-      <img src="/professor.png" alt="Professor Nam-Yung Park" className="aspect-[3/4] object-cover w-full" />
+      <img src="/profile.jpg" alt="Professor Nam-Yung Park" className="aspect-[3/4] object-cover w-full" />
       <div className="p-4 text-sm">
         <p className="font-semibold">박남영 교수</p>
         <p className="text-gray-600 mt-1">인하대학교 이차전지융합학과</p>
@@ -96,18 +112,25 @@ const Professor = () => (
     </div>
   </div>
 );
-
-const MemberCard = ({ name, role }) => (
+type MemberCardProps = {
+  name: string;
+  role: string;
+};
+const MemberCard = ({ name, role }: MemberCardProps) => (
   <div className="rounded-2xl border p-4 bg-white shadow-sm">
     <p className="font-medium">{name}</p>
     <p className="text-gray-600 text-sm mt-1">{role}</p>
   </div>
 );
 
-const Publications = () => {
-  const [year, setYear] = useState("2025");
-  const items = useMemo(
-    () => ({
+type Publication = {
+  title: string;
+  authors: string;
+  journal: string;
+  link: string;
+};
+
+const items: Record<string, Publication[]> = {
       "2025": [
         {
     "title": "Zero-strain Mn-rich layered cathode for sustainable and high-energy next-generation batteries",
@@ -304,23 +327,33 @@ const Publications = () => {
     "link": "https://pubs.acs.org/doi/full/10.1021/acsenergylett.8b01926"
   }
 
-      ]
-    }), []
-  );
-
+      ],
+  };
+export function PublicationsSection() {
   const years = Object.keys(items);
-  const filtered = items[year];
+  const [year, setYear] = useState<string>(years[0]); // ✅ 선택된 연도 상태
+
+  const filtered = items[year] ?? [];
 
   return (
     <div>
       <div className="flex flex-wrap items-center gap-3">
         <span className="text-sm">연도 선택</span>
         <div className="flex gap-2">
-          {years.map(y => (
-            <button key={y} onClick={() => setYear(y)} className={`px-3 py-1.5 rounded-xl border text-sm ${year===y?"bg-black text-white":"bg-white"}`}>{y}</button>
+          {years.map((y) => (
+            <button
+              key={y}
+              onClick={() => setYear(y)}
+              className={`px-3 py-1.5 rounded-xl border text-sm ${
+                year === y ? "bg-black text-white" : "bg-white"
+              }`}
+            >
+              {y}
+            </button>
           ))}
         </div>
       </div>
+
       <div className="mt-6 overflow-x-auto">
         <table className="min-w-full text-sm">
           <thead>
@@ -337,7 +370,16 @@ const Publications = () => {
                 <td className="py-2 pr-4 font-medium">{p.title}</td>
                 <td className="py-2 pr-4 text-gray-700">{p.authors}</td>
                 <td className="py-2 pr-4">{p.journal}</td>
-                <td className="py-2"><a className="underline" href={p.link} target="_blank" rel="noreferrer">View</a></td>
+                <td className="py-2">
+                  <a
+                    className="underline"
+                    href={p.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -345,7 +387,8 @@ const Publications = () => {
       </div>
     </div>
   );
-};
+}
+
 
 const Footer = () => (
   <footer className="mt-20 border-t">
@@ -432,7 +475,7 @@ export default function LabSite() {
       </Section>
 
       <Section id="publications" title="논문">
-        <Publications />
+       <PublicationsSection />
       </Section>
 
       <Section id="contact" title="문의">
