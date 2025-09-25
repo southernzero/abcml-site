@@ -1,5 +1,7 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
+
 export default function Hero() {
   return (
     <div className="relative overflow-hidden">
@@ -20,8 +22,17 @@ export default function Hero() {
               <Link href="/#contact" className="btn-ghost">문의</Link>
             </div>
           </div>
+
+          {/* Image 최적화: <img> -> next/image */}
           <div className="aspect-[4/3] bg-white rounded-2xl border shadow-sm p-4 flex items-center justify-center">
-            <img src="/abcml-logo.png" alt="ABCML Logo" className="max-h-full max-w-full object-contain" />
+            <Image
+              src="/abcml-logo.png"
+              alt="ABCML Logo"
+              width={800}
+              height={600}
+              className="max-h-full max-w-full object-contain"
+              priority
+            />
           </div>
         </div>
       </div>
