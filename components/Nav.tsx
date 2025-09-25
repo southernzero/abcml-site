@@ -12,7 +12,6 @@ export default function Nav() {
         <Link href="/" className="font-semibold text-lg md:text-xl">
           Advanced Battery & Cathode Materials Lab
         </Link>
-
         <nav className="hidden md:flex gap-6 text-sm">
           <Link href="/" className={isActive('/') ? 'opacity-60' : 'hover:opacity-70'}>Home</Link>
           <Link href="/research" className={isActive('/research') ? 'opacity-60' : 'hover:opacity-70'}>Research</Link>
@@ -21,10 +20,7 @@ export default function Nav() {
           <Link href="/publications" className={isActive('/publications') ? 'opacity-60' : 'hover:opacity-70'}>Publication</Link>
           <Link href="/gallery" className={isActive('/gallery') ? 'opacity-60' : 'hover:opacity-70'}>Gallery</Link>
         </nav>
-
-        <Link href="/#contact" className="md:inline-flex hidden rounded-xl border px-3 py-1.5 text-sm">
-          문의
-        </Link>
+        <Link href="/#contact" className="md:inline-flex hidden rounded-xl border px-3 py-1.5 text-sm">문의</Link>
       </div>
     </header>
   );

@@ -19,11 +19,11 @@ export default function Footer() {
           <div>
             <p className="font-semibold">바로가기</p>
             <ul className="mt-2 space-y-1 underline">
-              <li><Link href="/research">Research</Link></li>
-              <li><Link href="/professor">Professor</Link></li>
-              <li><Link href="/members">Member</Link></li>
-              <li><Link href="/publications">Publication</Link></li>
-              <li><Link href="/gallery">Gallery</Link></li>
+              <li><a href="/research">Research</a></li>
+              <li><a href="/professor">Professor</a></li>
+              <li><a href="/members">Member</a></li>
+              <li><a href="/publications">Publication</a></li>
+              <li><a href="/gallery">Gallery</a></li>
             </ul>
           </div>
         </div>
