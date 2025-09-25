@@ -43,10 +43,10 @@ export default function MemberCard({ m }: { m: Member }) {
 
         <div className="mt-2 text-xs space-x-3">
           {m.email && (
-            <a href={`mailto:${m.email}`} className="underline">Email</a>
+            <Link href={`mailto:${m.email}`} className="underline">Email</Link>
           )}
           {m.link && (
-            <a href={m.link} target="_blank" rel="noreferrer" className="underline">Link</a>
+            <Link href={m.link} target="_blank" rel="noreferrer" className="underline">Link</Link>
           )}
         </div>
       </div>
