@@ -20,7 +20,7 @@ export default function Nav() {
           <Link href="/publications" className={isActive('/publications') ? 'opacity-60' : 'hover:opacity-70'}>Publication</Link>
           <Link href="/gallery" className={isActive('/gallery') ? 'opacity-60' : 'hover:opacity-70'}>Gallery</Link>
         </nav>
-        <a href="/#contact" className="md:inline-flex hidden rounded-xl border px-3 py-1.5 text-sm">문의</a>
+        <Link href="/#contact" className="md:inline-flex hidden rounded-xl border px-3 py-1.5 text-sm">문의</Link>
       </div>
     </header>
   );

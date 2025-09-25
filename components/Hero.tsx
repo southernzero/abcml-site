@@ -17,7 +17,7 @@ export default function Hero() {
               <Link href="/research" className="btn-brand" aria-label="연구내용 페이지로 이동">
                 연구 분야 보기
               </Link>
-              <a href="/#contact" className="btn-ghost">문의</a>
+              <Link href="/#contact" className="btn-ghost">문의</Link>
             </div>
           </div>
           <div className="aspect-[4/3] bg-white rounded-2xl border shadow-sm p-4 flex items-center justify-center">
