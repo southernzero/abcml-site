@@ -1,29 +1,38 @@
+/* v4 방식: Tailwind 로드 */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* (쓰고 있으면) 타이포그래피 플러그인 */
+@plugin "@tailwindcss/typography";
+
+/* ✅ 여기서 디자인 토큰(색/폰트)을 선언 */
+@theme {
+  /* 색상 토큰 → 클래스: bg-brand-navy, text-brand-teal 등 */
+  --color-brand-navy: #1F3A4D;
+  --color-brand-teal: #2FA37B;
+  --color-brand-light: #E6F3EF;
+
+  /* 전역 배경/전경 색 → 클래스: bg-background, text-foreground */
+  --color-background: #f7faf9;
+  --color-foreground: #1F3A4D;
+
+  /* 폰트 토큰 → 클래스: font-sans */
+  --font-sans: "Pretendard Variable", Pretendard, ui-sans-serif, system-ui;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 전역 베이스 스타일(원하는 만큼) */
+@layer base {
+  html, body {
+    @apply font-sans bg-background text-foreground;
+  }
+  h1, h2, h3, .heading {
+    /* tracking-tight 유틸 대신 안전한 CSS */
+    letter-spacing: -0.02em;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* 컴포넌트 헬퍼 (버튼 등) */
+@layer components {
+  .btn-brand { @apply rounded-xl px-4 py-2 text-sm font-medium bg-brand-navy text-white hover:opacity-90; }
+  .btn-ghost { @apply rounded-xl px-4 py-2 text-sm border text-brand-navy hover:bg-brand-light/50; }
+  .card      { @apply rounded-2xl border bg-white shadow-sm; }
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
