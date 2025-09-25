@@ -42,14 +42,14 @@ export default function PublicationCard({ p }: { p: Publication }) {
         <h3 className="font-semibold text-sm">{p.title}</h3>
         <p className="text-xs text-gray-600 mt-1">{p.authors}</p>
         <p className="text-xs mt-1"><span className="font-semibold">{p.journal}</span></p>
-        <a
+        <Link
           href={p.link}
           target="_blank"
           rel="noreferrer"
           className="inline-block mt-2 text-sm underline"
         >
           View
-        </a>
+        </Link>
       </div>
     </div>
   );
