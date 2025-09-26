@@ -26,3 +26,6 @@ export const news: NewsItem[] = [
   },
 
 ];
+export function getNewsById(id: string) {
+  return news.find((n) => n.id === id);
+}
