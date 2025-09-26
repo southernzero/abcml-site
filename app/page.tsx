@@ -31,7 +31,7 @@ export default function HomePage() {
          .slice(0, 3) // 상위 3개만 표시
          .map((notice) => (
          <li key={notice.id} className="p-3 hover:bg-gray-50 transition">
-          <Link href={`/notice/${notice.id}`} className="flex justify-between">
+          <Link href={`/notices/${notice.id}`} className="flex justify-between">
             <span className="line-clamp-1">{notice.title}</span>
             <span className="text-sm text-gray-500">{notice.date}</span>
           </Link>
@@ -39,7 +39,7 @@ export default function HomePage() {
           ))}
         </ul>
            <div className="mt-3 text-sm">
-           <Link href="/notice" className="underline">공지 더 보기</Link>
+           <Link href="/notices" className="underline">공지 더 보기</Link>
          </div>
       </Section>
 
