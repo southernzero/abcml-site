@@ -21,4 +21,7 @@ export const notices: Post[] = [
 ];
 
 // 헬퍼
-export const getNoticeById = (id: string) => notices.find(n => n.id === id);
+export function getNoticeById(id: string) {
+  return notices.find(n => n.id === id);
+}
+
