@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { notices } from '@/data/notices';
 import { news } from '@/data/news';
+import Image from 'next/image';
 
 export default function HomePage() {
   return (
@@ -22,39 +23,72 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section title="Notice">
-        <ul className="divide-y rounded-2xl border bg-white shadow-sm">
-          {notices.map(n => (
-            <li key={n.id} className="p-4">
-              <div className="flex items-baseline justify-between">
-                <Link href={`/notice/${n.id}`} className="font-medium hover:underline">{n.title}</Link>
-                <span className="text-xs text-gray-500">{n.date}</span>
-              </div>
-              {n.summary && <p className="text-sm text-gray-600 mt-1">{n.summary}</p>}
-            </li>
+      <Section title="Notices">
+        <ul className="divide-y divide-gray-200 border rounded-lg bg-white shadow-sm">
+          {notices
+          .slice()
+         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // 최신순 정렬
+         .slice(0, 3) // 상위 3개만 표시
+         .map((notice) => (
+         <li key={notice.id} className="p-3 hover:bg-gray-50 transition">
+          <Link href={`/notices/${notice.id}`} className="flex justify-between">
+            <span className="line-clamp-1">{notice.title}</span>
+            <span className="text-sm text-gray-500">{notice.date}</span>
+          </Link>
+        </li>
           ))}
         </ul>
-        <div className="mt-3 text-sm">
-          <Link href="/notice" className="underline">공지 더 보기</Link>
-        </div>
+           <div className="mt-3 text-sm">
+           <Link href="/notices" className="underline">공지 더 보기</Link>
+         </div>
       </Section>
 
       <Section title="News">
-        <ul className="divide-y rounded-2xl border bg-white shadow-sm">
-          {news.map(n => (
-            <li key={n.id} className="p-4">
-              <div className="flex items-baseline justify-between">
-                <Link href={`/news/${n.id}`} className="font-medium hover:underline">{n.title}</Link>
-                <span className="text-xs text-gray-500">{n.date}</span>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {news
+      .slice() // 원본 배열 훼손 방지
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // 최신순 정렬
+      .slice(0, 2) // 상위 2개만 표시
+      .map((n) => (
+        <Link
+          key={n.id}
+          href={`/news/${n.id}`}
+          className="group overflow-hidden rounded-2xl border bg-white shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div className="relative aspect-[16/9] bg-slate-100">
+            {n.image ? (
+              <Image
+                src={n.image}
+                alt={n.title}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                priority
+              />
+            ) : (
+              <div className="absolute inset-0 grid place-items-center text-sm text-gray-400">
+                No image
               </div>
-              {n.summary && <p className="text-sm text-gray-600 mt-1">{n.summary}</p>}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-3 text-sm">
-          <Link href="/news" className="underline">뉴스 더 보기</Link>
-        </div>
-      </Section>
+            )}
+          </div>
+
+          <div className="p-4">
+            <div className="flex items-baseline justify-between gap-3">
+              <h3 className="font-medium line-clamp-2">{n.title}</h3>
+              <span className="shrink-0 text-xs text-gray-500">{n.date}</span>
+            </div>
+            {n.summary && (
+              <p className="text-sm text-gray-600 mt-1 line-clamp-2">{n.summary}</p>
+            )}
+          </div>
+        </Link>
+      ))}
+  </div>
+
+  <div className="mt-3 text-sm">
+    <Link href="/news" className="underline">뉴스 더 보기</Link>
+  </div>
+</Section>
 
       <Section id="contact" title="Contact">
         <div className="rounded-2xl border bg-white shadow-sm p-5">
