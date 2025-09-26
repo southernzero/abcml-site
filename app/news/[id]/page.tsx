@@ -13,7 +13,9 @@ export default function NewsDetail({ params }: { params: { id: string } }) {
       <Nav />
       <Section title={item.title}>
         <p className="text-sm text-gray-500">{item.date}</p>
-        <div className="prose mt-4">{item.body ?? '상세 내용 준비 중입니다.'}</div>
+        <div className="prose mt-4">
+  {item.body ?? item.summary ?? "상세 내용 준비 중입니다."}
+</div>
       </Section>
       <Footer />
     </main>
