@@ -1,5 +1,6 @@
 // app/layout.tsx
 import './globals.css';
+import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Advanced Battery & Cathode Materials Lab (ABCML) — Inha University, Nam-Yung Park | 인하대학교, 박남영",
   description:
