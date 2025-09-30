@@ -14,11 +14,10 @@ export default function HomePage() {
     <main className="min-h-screen bg-slate-50 text-gray-900">
       <Nav />
       <Hero />
-
       <Section id="overview" title="연구실 소개" subtitle="Advanced Battery & Cathode Materials Lab (ABCML)">
         <div className="prose max-w-none prose-slate">
           <p>
-            ABCML focuses on developing advanced cathode materials optimized for diverse battery systems, including lithium-ion, sodium-ion, and all-solid-state batteries. Through an integrated approach that tightly connects synthesis, characterization, and application, we pursue industrial applicability and sustainability across the full material lifecycle.
+            ABCML은 Li-ion Batteries, Na-ion Batteries, All-Solid-State Batteries를 비롯한 다양한 차세대 배터리 시스템에 최적화된 첨단 소재 개발에 집중하고 있습니다. 배터리 소재 합성 및 분석을 바탕으로 배터리 성능을 향상시키며, 나아가 소재 재활용까지 확장하는 전주기적 통합 연구를 통해 소재에 대한 근본적 이해와 산업적 활용성, 지속가능성을 동시에 실현합니다.
           </p>
         </div>
       </Section>
