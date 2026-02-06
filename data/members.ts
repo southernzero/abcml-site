@@ -19,7 +19,7 @@ export const currentMemberGroups: MemberGroup[] = [
   {
     title: 'M.S. Students',
     items: [
-      { name: '정승훈 (Seung-Hoon Jung)', role: '리튬이온전지 양극 소재',image: '/members/정승훈.png', note: '석박사통합 1기'},{ name: '권혁원 (Hyuck-Won Kwon)', role: '리튬이온전지 양극 소재',image: '/members/권혁원.jpg', note: '석사 1기'}
+      { name: '정승훈 (Seung Hun Jeong)', role: '리튬이온전지 양극 소재',image: '/members/정승훈.png', note: '석박사통합 1기'},{ name: '권혁원 (Hyuck-Won Kwon)', role: '리튬이온전지 양극 소재',image: '/members/권혁원.jpg', note: '석사 1기'}
       // 예) { name: '이영희', role: 'MS', image: '/members/ms-lee.png', note: '입학 2025' },
     ],
   },

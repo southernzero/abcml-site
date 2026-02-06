@@ -94,7 +94,7 @@ export default function HomePage() {
           <p className="mt-2 text-sm text-gray-700">For inquiries regarding admission or research collaboration, please contact us by e-mail.</p>
           <ul className="mt-4 text-sm space-y-1">
             <li>E-mail: nypark@inha.ac.kr</li>
-            <li>Address: 인천 미추홀구 인하로 100 인하대학교 2북관 585호</li>
+            <li>Address: 인천 미추홀구 인하로 100 인하대학교 2북관 591호</li>
           </ul>
         </div>
       </Section>

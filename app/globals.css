@@ -36,3 +36,93 @@
   .btn-ghost { @apply rounded-xl px-4 py-2 text-sm border text-brand-navy hover:bg-brand-light/50; }
   .card      { @apply rounded-2xl border bg-white shadow-sm; }
 }
+/* ================================
+   Mobile Navigation (Hamburger)
+   Tailwind v4 compatible
+================================ */
+
+/* 네비 래퍼 */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-background);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* 네비 내부 정렬 */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+/* 로고 */
+.nav-logo a {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-foreground);
+  text-decoration: none;
+}
+
+/* 메뉴 공통 */
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--color-foreground);
+  font-weight: 500;
+}
+
+/* 데스크탑 메뉴 */
+.nav-menu.desktop {
+  display: flex;
+  gap: 28px;
+}
+
+/* 햄버거 버튼 */
+.nav-hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: var(--color-foreground);
+  cursor: pointer;
+}
+
+/* 모바일 드롭다운 */
+.nav-menu.mobile {
+  position: absolute;
+  top: 64px;
+  right: 20px;
+  width: 190px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.nav-menu.mobile li {
+  margin-bottom: 14px;
+}
+
+.nav-menu.mobile li:last-child {
+  margin-bottom: 0;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .nav-menu.desktop {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: block;
+  }
+}

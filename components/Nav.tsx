@@ -1,37 +1,48 @@
 'use client';
+
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 export default function Nav() {
-  const pathname = usePathname();
-  const isActive = (href: string) => pathname === href;
+  const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* 왼쪽 로고 */}
-        <Link href="/" className="font-semibold text-lg md:text-xl">
-          Advanced Battery & Cathode Materials Lab
-        </Link>
-
-        {/* 오른쪽 메뉴 + 문의 버튼 */}
-        <div className="flex items-center gap-6 text-sm">
-          <nav className="hidden md:flex gap-6">
-            <Link href="/" className={isActive('/') ? 'opacity-60' : 'hover:opacity-70'}>Home</Link>
-            <Link href="/research" className={isActive('/research') ? 'opacity-60' : 'hover:opacity-70'}>Research</Link>
-            <Link href="/professor" className={isActive('/professor') ? 'opacity-60' : 'hover:opacity-70'}>Professor</Link>
-            <Link href="/members" className={isActive('/members') ? 'opacity-60' : 'hover:opacity-70'}>Member</Link>
-            <Link href="/publications" className={isActive('/publications') ? 'opacity-60' : 'hover:opacity-70'}>Publication</Link>
-            <Link href="/gallery" className={isActive('/gallery') ? 'opacity-60' : 'hover:opacity-70'}>Gallery</Link>
-          </nav>
-          <Link
-            href="/#contact"
-            className="md:inline-flex hidden rounded-xl border px-3 py-1.5 text-sm"
-          >
-            문의
-          </Link>
-        </div>
+<nav className="nav">
+  <div className="nav-inner">
+      {/* 로고 */}
+      <div className="nav-logo">
+        <Link href="/">Advanced Battery & Cathode Materials Lab</Link>
       </div>
-    </header>
+
+      {/* 데스크탑 메뉴 */}
+      <ul className="nav-menu desktop">
+        <li><Link href="/research">Research</Link></li>
+        <li><Link href="/professor">Professor</Link></li>
+        <li><Link href="/members">Members</Link></li>
+        <li><Link href="/publications">Publications</Link></li>
+        <li><Link href="/contact">Contact</Link></li>
+      </ul>
+
+      {/* 모바일 햄버거 */}
+      <button
+        className="nav-hamburger"
+        onClick={() => setOpen(!open)}
+        aria-label="menu"
+      >
+        {open ? '✕' : '☰'}
+      </button>
+
+      {/* 모바일 드롭다운 */}
+      {open && (
+        <ul className="nav-menu mobile">
+          <li onClick={() => setOpen(false)}><Link href="/research">Research</Link></li>
+          <li onClick={() => setOpen(false)}><Link href="/professor">Professor</Link></li>
+          <li onClick={() => setOpen(false)}><Link href="/members">Members</Link></li>
+          <li onClick={() => setOpen(false)}><Link href="/publications">Publications</Link></li>
+          <li onClick={() => setOpen(false)}><Link href="/contact">Contact</Link></li>
+        </ul>
+      )}
+     </div>
+</nav>
   );
 }
