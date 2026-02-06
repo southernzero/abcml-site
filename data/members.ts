@@ -8,13 +8,7 @@ export type MemberGroup = {
 
 /** 현재 구성원 */
 export const currentMemberGroups: MemberGroup[] = [
-  {
-    title: 'Postdoctoral Researchers',
-    items: [
-      { name: '모집중', role: 'Postdoc', note: '박사후연구원' },
-      // 예) { name: '홍길동', role: 'Postdoc', image: '/members/postdoc-hong.jpg', email: 'hong@inha.ac.kr', note: '양극소재 합성' },
-    ],
-  },
+  
   {
     title: 'Ph.D. Candidates',
     items: [
@@ -25,7 +19,7 @@ export const currentMemberGroups: MemberGroup[] = [
   {
     title: 'M.S. Students',
     items: [
-      { name: '모집중', role: 'MS' },
+      { name: '정승훈 (Seung-Hoon Jung)', role: '리튬이온전지 양극 소재',image: '/members/정승훈.png', note: '석박사통합 1기'},{ name: '권혁원 (Hyuck-Won Kwon)', role: '리튬이온전지 양극 소재',image: '/members/권혁원.jpg', note: '석사 1기'}
       // 예) { name: '이영희', role: 'MS', image: '/members/ms-lee.png', note: '입학 2025' },
     ],
   },
@@ -52,3 +46,12 @@ export const alumniGroups: MemberGroup[] = [
     ],
   },
 ];
+
+//추후 포닥
+//{
+//    title: 'Postdoctoral Researchers',
+//    items: [
+//      { name: '모집중', role: 'Postdoc', note: '박사후연구원' },
+//      // 예) { name: '홍길동', role: 'Postdoc', image: '/members/postdoc-hong.jpg', email: 'hong@inha.ac.kr', note: '양극소재 합성' },
+//    ],
+//  },

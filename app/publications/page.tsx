@@ -9,7 +9,30 @@ type Publication = {
   title: string; authors: string; journal: string; link: string; image?: string;
 };
 const pubs: Record<string, Publication[]> = {
+  '2026': [
+    {
+    title: 'Nanostructured niobium-doped nickel-rich multiphase positive electrode active material for high-power lithium-based batteries',
+    authors: 'Nam-Yung Park/Park Geon-Tae/Ryu Ji-Hyun/Park Seong-Eun/Kim Jae-Ho/Lee Seung-Yong/Choi Junhyeok/Lee Yong Min/Kim Min Gyu/Lee Heebeom/Cline Joseph P./Liu Zhao/Jung Hun-Gi/Sun Yang-Kook',
+    journal: 'Nature Nanotechnology (IF: 34.9)',
+    link: 'https://doi.org/10.1038/s41565-025-02092-y',
+    image: '/pubs/2026-2.jpg'
+  },
+    {
+    title: 'Fabricating high-energy-density bimodal cathodes using radially oriented rod-shaped primary particles',
+    authors: 'Nam-Yung Park/Park Seong-Eun Park/KimDae-Won/Sun Yang-Kook',
+    journal: 'Energy Storage Materials (IF: 20.2)',
+    link: 'https://doi.org/10.1016/j.ensm.2025.104761',
+    image: '/pubs/2026-1.jpg'
+      }
+      ],
   '2025': [
+    {
+    title: 'Single-crystal vs polycrystalline cathodes for lithium-ion batteries',
+    authors: 'Nam-Yung Park/Park Geon-Tae/Ryu Hoon-Hee/Lee Soo-Been/Sun Yang-Kook',
+    journal: 'Chemical Reviews (IF: 55.8)',
+    link: 'https://doi.org/10.1021/acs.chemrev.5c00441',
+    image: '/pubs/2025-7.jpg'
+  },  
     {
     title: 'Zero-strain Mn-rich layered cathode for sustainable and high-energy next-generation batteries',
     authors: 'Park Geon-Tae/Nam-Yung Park/Ryu Ji-Hyun/Sohn Sung-June/Yu Tae-Yeon/Kim Myoung-Chan/Baiju Sourav/Kaghazchi Payam/Yoon Chong S./Sun Yang-Kook',
@@ -240,8 +263,9 @@ const pubs: Record<string, Publication[]> = {
 };
 
 export default function PublicationsPage() {
-  const years = Object.keys(pubs);
- const [year, setYear] = useState(years[0]);
+const years = ['2026', '2025', '2018-2024'];
+const [year, setYear] = useState(years[0]);
+
   const list = pubs[year] ?? [];
 
   return (
