@@ -41,7 +41,7 @@ export default function Nav() {
           <li onClick={() => setOpen(false)}><Link href="/professor">Professor</Link></li>
           <li onClick={() => setOpen(false)}><Link href="/members">Members</Link></li>
           <li onClick={() => setOpen(false)}><Link href="/publications">Publications</Link></li>
-          <li onClick={() => setOpen(false)}><Link href="/contact">Contact</Link></li>
+          <li onClick={() => setOpen(false)}><Link href="/#contact">Contact</Link></li>
         </ul>
       )}
      </div>
