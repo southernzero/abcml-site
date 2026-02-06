@@ -20,7 +20,9 @@ export default function Nav() {
         <li><Link href="/professor">Professor</Link></li>
         <li><Link href="/members">Members</Link></li>
         <li><Link href="/publications">Publications</Link></li>
-        <li><Link href="/contact">Contact</Link></li>
+        <li><Link href="/#contact" className="hover:underline">
+  Contact
+</Link></li>
       </ul>
 
       {/* 모바일 햄버거 */}
