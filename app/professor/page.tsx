@@ -1,4 +1,3 @@
-'use client';
 import Nav from '@/components/Nav';
 import Section from '@/components/Section';
 import Footer from '@/components/Footer';
@@ -33,19 +32,17 @@ export default function ProfessorPage() {
               <li>고성능 양극 소재 개발을 위한 결정구조·입자형상 제어 기술</li>
               <li>전고체전지 맞춤형 양극 소재 개발</li>
               <li>폐배터리 리사이클링 및 소재 업사이클링 기술</li>
-<p className="mt-4 text-sm text-gray-700">
-  {' '}
-  <a
-    href="https://scholar.google.co.kr/citations?user=tlvfJbMAAAAJ"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-blue-600 hover:underline"
-  >
-    Google Scholar
-    
-  </a>
-</p>
             </ul>
+            <p className="mt-4 text-sm text-gray-700">
+              <a
+                href="https://scholar.google.co.kr/citations?user=tlvfJbMAAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Google Scholar
+              </a>
+            </p>
             <div className="mt-6">
               <h4 className="font-semibold">Education</h4>
               <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1 mt-2">
