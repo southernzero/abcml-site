@@ -1,0 +1,331 @@
+{
+  "syncedAt": "2026-05-08T06:57:08.567Z",
+  "orcidId": "0000-0002-7626-5801",
+  "count": 36,
+  "works": [
+    {
+      "putCode": 214046854,
+      "title": "Fabricating high-energy-density bimodal cathodes using radially oriented rod-shaped primary particles",
+      "authors": "Park, S.-E./Park, N.-Y./Kim, D.-W./Sun, Y.-K.",
+      "journal": "Energy Storage Materials",
+      "year": 2026,
+      "doi": "10.1016/j.ensm.2025.104761",
+      "link": "https://doi.org/10.1016/j.ensm.2025.104761"
+    },
+    {
+      "putCode": 214046833,
+      "title": "Nanostructured niobium-doped nickel-rich multiphase positive electrode active material for high-power lithium-based batteries",
+      "authors": "Park, N.-Y./Park, G.-T./Ryu, J.-H./Park, S.-E./Kim, J.-H./Lee, S.-Y./Choi, J./Lee, Y.M./Kim, M.G./Lee, H./Cline, J.P./Liu, Z./Jung, H.-G./Sun, Y.-K.",
+      "journal": "Nature Nanotechnology",
+      "year": 2026,
+      "doi": "10.1038/s41565-025-02092-y",
+      "link": "https://doi.org/10.1038/s41565-025-02092-y"
+    },
+    {
+      "putCode": 214046601,
+      "title": "Strategic Synthetic Pathway for Tailoring the Crystallographic and Microstructural Evolution of Cathode Materials for Li-Ion Batteries",
+      "authors": "",
+      "journal": "ACS ENERGY LETTERS",
+      "year": 2026,
+      "doi": "10.1021/ACSENERGYLETT.6C00663",
+      "link": "https://doi.org/10.1021/ACSENERGYLETT.6C00663"
+    },
+    {
+      "putCode": 214046821,
+      "title": "High-energy, long-life Ni-rich cathode materials with columnar structures for all-solid-state batteries",
+      "authors": "Park, N.-Y./Lee, H.-U./Yu, T.-Y./Lee, I.-S./Kim, H./Park, S.-M./Jung, H.-G./Jung, Y.-C./Sun, Y.-K.",
+      "journal": "Nature Energy",
+      "year": 2025,
+      "doi": "10.1038/s41560-025-01726-8",
+      "link": "https://doi.org/10.1038/s41560-025-01726-8"
+    },
+    {
+      "putCode": 214046838,
+      "title": "Ni-rich cathode materials enabled by cracked-surface protection strategy for high-energy lithium batteries",
+      "authors": "Park, G.-T./Yoon, J.-I./Kim, G.-H./Park, N.-Y./Park, B.-C./Sun, Y.-K.",
+      "journal": "Materials Science and Engineering R Reports",
+      "year": 2025,
+      "doi": "10.1016/j.mser.2025.100945",
+      "link": "https://doi.org/10.1016/j.mser.2025.100945"
+    },
+    {
+      "putCode": 214046824,
+      "title": "Scalable shell doping strategy for enhancing the stability of Ni-rich cathode materials",
+      "authors": "Kim, M.-C./Park, B.-C./Park, N.-Y./Kim, M.-S./Kim, K.-M./Kim, J.-H./Kim, E.-J./Park, G.-T./Sun, Y.-K.",
+      "journal": "Energy Storage Materials",
+      "year": 2025,
+      "doi": "10.1016/j.ensm.2025.104252",
+      "link": "https://doi.org/10.1016/j.ensm.2025.104252"
+    },
+    {
+      "putCode": 214046843,
+      "title": "Single-Crystal vs Polycrystalline Cathodes for Lithium-Ion Batteries",
+      "authors": "Park, G.-T./Ryu, H.-H./Park, N.-Y./Lee, S.-B./Sun, Y.-K.",
+      "journal": "Chemical Reviews",
+      "year": 2025,
+      "doi": "10.1021/acs.chemrev.5c00441",
+      "link": "https://doi.org/10.1021/acs.chemrev.5c00441"
+    },
+    {
+      "putCode": 214046817,
+      "title": "Structural Unpredictability of a Cobalt-Free Layered Cathode and Its Mitigation for Producing Reliable, Sustainable Batteries",
+      "authors": "Park, G.-T./Kim, M.-C./Kim, M.-S./Noh, T.-C./Ryu, J.-H./Park, N.-Y./Sun, Y.-K.",
+      "journal": "Advanced Energy Materials",
+      "year": 2025,
+      "doi": "10.1002/aenm.202404593",
+      "link": "https://doi.org/10.1002/aenm.202404593"
+    },
+    {
+      "putCode": 214046840,
+      "title": "Tuning the Lithium Diffusion Kinetics in Co-Free Layered Cathodes for High-Performance All-Solid-State Batteries",
+      "authors": "Yu, T.-Y./Park, N.-Y./Kim, H./Lee, I.-S./Lee, H.-U./Kim, K.-H./Cho, W./Jung, H.-G./Chung, K.Y./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2025,
+      "doi": "10.1021/acsenergylett.5c00961",
+      "link": "https://doi.org/10.1021/acsenergylett.5c00961"
+    },
+    {
+      "putCode": 214046806,
+      "title": "Zero-strain Mn-rich layered cathode for sustainable and high-energy next-generation batteries",
+      "authors": "Park, G.-T./Park, N.-Y./Ryu, J.-H./Sohn, S.-J./Yu, T.-Y./Kim, M.-C./Baiju, S./Kaghazchi, P./Yoon, C.S./Sun, Y.-K.",
+      "journal": "Nature Energy",
+      "year": 2025,
+      "doi": "10.1038/s41560-025-01852-3",
+      "link": "https://doi.org/10.1038/s41560-025-01852-3"
+    },
+    {
+      "putCode": 214046831,
+      "title": "Aluminum-distribution-dependent microstructural evolution of NCA cathodes: Is aluminum homogeneity really favorable?",
+      "authors": "Park, G.-T./Ryu, J.-H./Kim, J.-H./Sun, H.H./Suh, D.E./Han, S.-M./Park, N.-Y./Sun, Y.-K.",
+      "journal": "Energy Storage Materials",
+      "year": 2024,
+      "doi": "10.1016/j.ensm.2024.103496",
+      "link": "https://doi.org/10.1016/j.ensm.2024.103496"
+    },
+    {
+      "putCode": 214046847,
+      "title": "Doping Strategy in Developing Ni-Rich Cathodes for High-Performance Lithium-Ion Batteries",
+      "authors": "Lee, S.-B./Park, N.-Y./Park, G.-T./Kim, U.-H./Sohn, S.-J./Kang, M.-S./Ribas, R.M./Monteiro, R.S./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2024,
+      "doi": "10.1021/acsenergylett.3c02759",
+      "link": "https://doi.org/10.1021/acsenergylett.3c02759"
+    },
+    {
+      "putCode": 214046855,
+      "title": "Forming Robust and Highly Li-Ion Conductive Interfaces in High-Performance Lithium Metal Batteries Using Chloroethylene Carbonate Additive",
+      "authors": "Kim, H./Lee, S.-H./Park, N.-Y./Kim, J.-M./Hwang, J.-Y./Sun, Y.-K.",
+      "journal": "Advanced Energy and Sustainability Research",
+      "year": 2024,
+      "doi": "10.1002/aesr.202300151",
+      "link": "https://doi.org/10.1002/aesr.202300151"
+    },
+    {
+      "putCode": 214046844,
+      "title": "Introducing Co Nanoshells onto Ni-Rich Cathode Materials for High-Rate Long-Life Li-Ion Batteries",
+      "authors": "Han, S.-M./Park, G.-T./Kim, D.-H./Seo, M.-G./Park, N.-Y./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2024,
+      "doi": "10.1021/acsenergylett.4c02638",
+      "link": "https://doi.org/10.1021/acsenergylett.4c02638"
+    },
+    {
+      "putCode": 214046808,
+      "title": "Mechanism Behind the Loss of Fast Charging Capability in Nickel-Rich Cathode Materials",
+      "authors": "Park, N.-Y./Kim, M.-C./Han, S.-M./Park, G.-T./Kim, D.-H./Kim, M.-S./Sun, Y.-K.",
+      "journal": "Angewandte Chemie International Edition",
+      "year": 2024,
+      "doi": "10.1002/anie.202319707",
+      "link": "https://doi.org/10.1002/anie.202319707"
+    },
+    {
+      "putCode": 214046851,
+      "title": "Nano-rods in Ni-rich layered cathodes for practical batteries",
+      "authors": "Park, G.-T./Park, N.-Y./Ryu, H.-H./Sun, H.H./Hwang, J.-Y./Sun, Y.-K.",
+      "journal": "Chemical Society Reviews",
+      "year": 2024,
+      "doi": "10.1039/d3cs01110k",
+      "link": "https://doi.org/10.1039/d3cs01110k"
+    },
+    {
+      "putCode": 214046859,
+      "title": "Tailoring Primary Particle Size Distribution to Suppress Microcracks in Ni-Rich Cathodes via Controlled Grain Coarsening",
+      "authors": "Park, N.-Y./Han, S.-M./Ryu, J.-H./Kim, M.-C./Yoon, J.-I./Kim, J.-H./Park, G.-T./Frerichs, J.E./Erk, C./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2024,
+      "doi": "10.1021/acsenergylett.4c01397",
+      "link": "https://doi.org/10.1021/acsenergylett.4c01397"
+    },
+    {
+      "putCode": 214046862,
+      "title": "Unraveling the New Role of Manganese in Nano and Microstructural Engineering of Ni-Rich Layered Cathode for Advanced Lithium-Ion Batteries",
+      "authors": "Park, G.-T./Kim, S.-B./Yoon, J.-I./Park, N.-Y./Kim, M.-C./Han, S.-M./Kim, D.-H./Kim, M.-S./Sun, Y.-K.",
+      "journal": "Advanced Energy Materials",
+      "year": 2024,
+      "doi": "10.1002/aenm.202400130",
+      "link": "https://doi.org/10.1002/aenm.202400130"
+    },
+    {
+      "putCode": 214046857,
+      "title": "A New Ternary Co-Free Layered Cathode, Li[Ni1-x-yTixAly]O2, for High-Energy Lithium-Ion Batteries",
+      "authors": "Park, G.-T./Kim, S.-B./Namkoong, B./Park, N.-Y./Kim, H./Yoon, C.S./Sun, Y.-K.",
+      "journal": "Materials Today",
+      "year": 2023,
+      "doi": "10.1016/j.mattod.2023.11.006",
+      "link": "https://doi.org/10.1016/j.mattod.2023.11.006"
+    },
+    {
+      "putCode": 214046858,
+      "title": "Intergranular Shielding for Ultrafine-Grained Mo-Doped Ni-Rich Li[Ni0.96Co0.04]O2 Cathode for Li-Ion Batteries with High Energy Density and Long Life",
+      "authors": "Park, G.-T./Kim, S.-B./Namkoong, B./Ryu, J.-H./Yoon, J.-I./Park, N.-Y./Kim, M.-C./Han, S.-M./Maglia, F./Sun, Y.-K.",
+      "journal": "Angewandte Chemie International Edition",
+      "year": 2023,
+      "doi": "10.1002/anie.202314480",
+      "link": "https://doi.org/10.1002/anie.202314480"
+    },
+    {
+      "putCode": 214046856,
+      "title": "Long-Lasting Ni-Rich NCMA Cathodes via Simultaneous Microstructural Refinement and Surface Modification",
+      "authors": "Ryu, H.-H./Lim, H.-W./Kang, G.-C./Park, N.-Y./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2023,
+      "doi": "10.1021/acsenergylett.3c00083",
+      "link": "https://doi.org/10.1021/acsenergylett.3c00083"
+    },
+    {
+      "putCode": 214046810,
+      "title": "Mechanism of Doping with High-Valence Elements for Developing Ni-Rich Cathode Materials",
+      "authors": "Park, N.-Y./Kim, S.-B./Kim, M.-C./Han, S.-M./Kim, D.-H./Kim, M.-S./Sun, Y.-K.",
+      "journal": "Advanced Energy Materials",
+      "year": 2023,
+      "doi": "10.1002/aenm.202301530",
+      "link": "https://doi.org/10.1002/aenm.202301530"
+    },
+    {
+      "putCode": 214046852,
+      "title": "Multifunctional Doping Strategy to Develop High-Performance Ni-Rich Cathode Material",
+      "authors": "Park, N.-Y./Cho, G./Kim, S.-B./Sun, Y.-K.",
+      "journal": "Advanced Energy Materials",
+      "year": 2023,
+      "doi": "10.1002/aenm.202204291",
+      "link": "https://doi.org/10.1002/aenm.202204291"
+    },
+    {
+      "putCode": 214046841,
+      "title": "Degradation Mechanism of Ni-Rich Cathode Materials: Focusing on Particle Interior",
+      "authors": "Park, N.-Y./Park, G.-T./Kim, S.-B./Jung, W./Park, B.-C./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2022,
+      "doi": "10.1021/acsenergylett.2c01272",
+      "link": "https://doi.org/10.1021/acsenergylett.2c01272"
+    },
+    {
+      "putCode": 214046845,
+      "title": "High-Energy Ni-Rich Cathode Materials for Long-Range and Long-Life Electric Vehicles",
+      "authors": "Namkoong, B./Park, N.-Y./Park, G.-T./Shin, J.-Y./Beierling, T./Yoon, C.S./Sun, Y.-K.",
+      "journal": "Advanced Energy Materials",
+      "year": 2022,
+      "doi": "10.1002/aenm.202200615",
+      "link": "https://doi.org/10.1002/aenm.202200615"
+    },
+    {
+      "putCode": 214046861,
+      "title": "High-Energy-Density Li-Ion Battery Reaching Full Charge in 12 min",
+      "authors": "Kim, U.-H./Lee, S.-B./Park, N.-Y./Kim, S.J./Yoon, C.S./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2022,
+      "doi": "10.1021/acsenergylett.2c02032",
+      "link": "https://doi.org/10.1021/acsenergylett.2c02032"
+    },
+    {
+      "putCode": 214046863,
+      "title": "High-Energy Cathodes via Precision Microstructure Tailoring for Next-Generation Electric Vehicles",
+      "authors": "Park, N.-Y./Ryu, H.-H./Kuo, L.-Y./Kaghazchi, P./Yoon, C.S./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2021,
+      "doi": "10.1021/acsenergylett.1c02281",
+      "link": "https://doi.org/10.1021/acsenergylett.1c02281"
+    },
+    {
+      "putCode": 214046807,
+      "title": "High-performance Ni-rich Li[Ni0.9-: XCo0.1Alx]O2cathodes via multi-stage microstructural tailoring from hydroxide precursor to the lithiated oxide",
+      "authors": "Park, G.-T./Park, N.-Y./Noh, T.-C./Namkoong, B./Ryu, H.-H./Shin, J.-Y./Beierling, T./Yoon, C.S./Sun, Y.-K.",
+      "journal": "Energy and Environmental Science",
+      "year": 2021,
+      "doi": "10.1039/d1ee01773j",
+      "link": "https://doi.org/10.1039/d1ee01773j"
+    },
+    {
+      "putCode": 214046848,
+      "title": "Microstrain Alleviation in High-Energy Ni-Rich NCMA Cathode for Long Battery Life",
+      "authors": "Ryu, H.-H./Park, N.-Y./Noh, T.-C./Kang, G.-C./Maglia, F./Kim, S.-J./Yoon, C.S./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2021,
+      "doi": "10.1021/acsenergylett.0c02281",
+      "link": "https://doi.org/10.1021/acsenergylett.0c02281"
+    },
+    {
+      "putCode": 214046849,
+      "title": "Optimized Ni-Rich NCMA Cathode for Electric Vehicle Batteries",
+      "authors": "Park, N.-Y./Ryu, H.-H./Park, G.-T./Noh, T.-C./Sun, Y.-K.",
+      "journal": "Advanced Energy Materials",
+      "year": 2021,
+      "doi": "10.1002/aenm.202003767",
+      "link": "https://doi.org/10.1002/aenm.202003767"
+    },
+    {
+      "putCode": 214046860,
+      "title": "A highly stabilized Ni-rich NCA cathode for high-energy lithium-ion batteries",
+      "authors": "Ryu, H.-H./Park, N.-Y./Seo, J.H./Yu, Y.-S./Sharma, M./Mücke, R./Kaghazchi, P./Yoon, C.S./Sun, Y.-K.",
+      "journal": "Materials Today",
+      "year": 2020,
+      "doi": "10.1016/j.mattod.2020.01.019",
+      "link": "https://doi.org/10.1016/j.mattod.2020.01.019"
+    },
+    {
+      "putCode": 214046839,
+      "title": "High-Energy W-Doped Li[Ni0.95Co0.04Al0.01]O2 Cathodes for Next-Generation Electric Vehicles",
+      "authors": "Kim, U.-H./Park, N.-Y./Park, G.-T./Kim, H./Yoon, C.S./Sun, Y.-K.",
+      "journal": "Energy Storage Materials",
+      "year": 2020,
+      "doi": "10.1016/j.ensm.2020.08.013",
+      "link": "https://doi.org/10.1016/j.ensm.2020.08.013"
+    },
+    {
+      "putCode": 214046853,
+      "title": "New Class of Ni-Rich Cathode Materials Li[NixCoyB1−x−y]O2 for Next Lithium Batteries",
+      "authors": "Ryu, H.-H./Park, N.-Y./Yoon, D.R./Kim, U.-H./Yoon, C.S./Sun, Y.-K.",
+      "journal": "Advanced Energy Materials",
+      "year": 2020,
+      "doi": "10.1002/aenm.202000495",
+      "link": "https://doi.org/10.1002/aenm.202000495"
+    },
+    {
+      "putCode": 214046850,
+      "title": "Capacity Fading of Ni-Rich NCA Cathodes: Effect of Microcracking Extent",
+      "authors": "Nam, G.W./Park, N.-Y./Park, K.-J./Yang, J./Liu, J./Yoon, C.S./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2019,
+      "doi": "10.1021/acsenergylett.9b02302",
+      "link": "https://doi.org/10.1021/acsenergylett.9b02302"
+    },
+    {
+      "putCode": 214046842,
+      "title": "Tungsten doping for stabilization of Li[Ni0.90Co0.05Mn0.05]O2 cathode for Li-ion battery at high voltage",
+      "authors": "Park, G.-T./Ryu, H.-H./Park, N.-Y./Yoon, C.S./Sun, Y.-K.",
+      "journal": "Journal of Power Sources",
+      "year": 2019,
+      "doi": "10.1016/j.jpowsour.2019.227242",
+      "link": "https://doi.org/10.1016/j.jpowsour.2019.227242"
+    },
+    {
+      "putCode": 214046828,
+      "title": "Icac 2018: The first international conference focused on ncm & nca cathode materials for lithium ion batteries",
+      "authors": "Kwak, W.-J./Park, N.-Y./Sun, Y.-K.",
+      "journal": "ACS Energy Letters",
+      "year": 2018,
+      "doi": "10.1021/acsenergylett.8b01926",
+      "link": "https://doi.org/10.1021/acsenergylett.8b01926"
+    }
+  ]
+}

@@ -20,6 +20,7 @@ export default function Nav() {
         <li><Link href="/professor">Professor</Link></li>
         <li><Link href="/members">Members</Link></li>
         <li><Link href="/publications">Publications</Link></li>
+        <li><Link href="/gallery">Gallery</Link></li>
         <li><Link href="/#contact" className="hover:underline">
   Contact
 </Link></li>
@@ -41,6 +42,7 @@ export default function Nav() {
           <li onClick={() => setOpen(false)}><Link href="/professor">Professor</Link></li>
           <li onClick={() => setOpen(false)}><Link href="/members">Members</Link></li>
           <li onClick={() => setOpen(false)}><Link href="/publications">Publications</Link></li>
+          <li onClick={() => setOpen(false)}><Link href="/gallery">Gallery</Link></li>
           <li onClick={() => setOpen(false)}><Link href="/#contact">Contact</Link></li>
         </ul>
       )}

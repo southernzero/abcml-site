@@ -1,14 +1,33 @@
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import Section from '@/components/Section';
-import { getNoticeById } from '@/data/notices';
+import { getNoticeById, notices } from '@/data/notices';
 
-export default function NoticeDetail({ params }: { params: { id: string } }) {
-  const item = getNoticeById(params.id);
+export function generateStaticParams() {
+  return notices.map((n) => ({ id: n.id }));
+}
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ id: string }> }
+): Promise<Metadata> {
+  const { id } = await params;
+  const item = getNoticeById(id);
+  if (!item) return { title: 'Notice' };
+  return {
+    title: item.title,
+    description: item.summary ?? item.title,
+  };
+}
+
+export default async function NoticeDetail(
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params;
+  const item = getNoticeById(id);
   if (!item) return notFound();
 
-  // Markdown 느낌의 줄바꿈 보존을 원하면 <pre>나 white-space 유틸을 사용
   return (
     <main className="min-h-screen bg-slate-50 text-gray-900">
       <Nav />
