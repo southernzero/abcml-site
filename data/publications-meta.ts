@@ -53,6 +53,7 @@ export function formatJournalWithIF(journal: string): string {
 /** DOI → 썸네일 이미지 매핑 (소문자로 비교) */
 export const DOI_IMAGES: Record<string, string> = {
   // 2026
+  '10.1021/acsenergylett.6c00663': '/pubs/2026-3.jpg',
   '10.1038/s41565-025-02092-y': '/pubs/2026-2.jpg',
   '10.1016/j.ensm.2025.104761': '/pubs/2026-1.jpg',
 
@@ -90,6 +91,8 @@ export const DOI_IMAGES: Record<string, string> = {
   '10.1002/aenm.202000495': '/pubs/2018-2024-5.jpg',
   '10.1016/j.mattod.2020.01.019': '/pubs/2018-2024-4.jpg', // Materials Today 2020 (ORCID 실제 DOI)
   '10.1021/acsenergylett.9b02302': '/pubs/2018-2024-3.jpg',
+  '10.1016/j.jpowsour.2019.227242': '/pubs/2018-2024-2.jpg',
+  '10.1021/acsenergylett.8b01926': '/pubs/2018-2024-1.jpg',
   // 새 논문 추가 시: '10.xxxx/yyyy': '/pubs/파일명.jpg',
 };
 
