@@ -38,9 +38,15 @@
   html, body {
     @apply font-sans bg-background text-foreground antialiased;
   }
-  body { -webkit-font-smoothing: antialiased; }
+  body {
+    -webkit-font-smoothing: antialiased;
+    /* 한글은 어절 단위로만 줄바꿈(음절 중간 끊김 방지), 긴 영문 토큰만 필요 시 분리 */
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
 
-  h1, h2, h3, .heading { letter-spacing: -0.02em; }
+  h1, h2, h3, .heading { letter-spacing: -0.02em; text-wrap: balance; }
+  p { text-wrap: pretty; }
 
   ::selection { background: color-mix(in srgb, var(--color-teal) 22%, transparent); }
 
@@ -122,9 +128,9 @@
   display: inline-flex; align-items: center; text-decoration: none;
 }
 .nav-logo img {
-  height: 34px; width: auto; display: block;
+  height: 42px; width: auto; display: block;
 }
-@media (max-width: 480px) { .nav-logo img { height: 30px; } }
+@media (max-width: 480px) { .nav-logo img { height: 36px; } }
 .nav-menu { list-style: none; margin: 0; padding: 0; }
 .nav-menu a { text-decoration: none; color: var(--color-navy); font-weight: 500; font-size: 14.5px; transition: color .15s; }
 .nav-menu a:hover { color: var(--color-teal); }

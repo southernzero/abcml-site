@@ -51,7 +51,7 @@ export default function HomePage() {
               <h3 className="mt-3 text-lg font-semibold text-navy" style={{ fontFamily: 'var(--font-display)' }}>
                 {en}
               </h3>
-              <p className="mono text-[0.7rem] uppercase tracking-wider text-muted mt-0.5">{ko}</p>
+              <p className="text-[0.74rem] font-medium text-muted mt-0.5">{ko}</p>
               <p className="mt-2 text-sm text-muted leading-relaxed">{desc}</p>
             </li>
           ))}

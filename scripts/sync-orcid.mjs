@@ -165,6 +165,23 @@ async function main() {
     }
   }
 
+  // ORCID에 기여자 정보가 없어 저자가 빈 논문은 기존 publications.json 의 값으로 보존한다.
+  // (ORCID에 없는 저자는 수동으로 채워두면, 이후 sync가 빈 값으로 덮어쓰지 않음)
+  try {
+    const prevRaw = await fs.readFile(OUTPUT_PATH, 'utf-8');
+    const prevWorks = JSON.parse(prevRaw)?.works ?? [];
+    const byCode = new Map(prevWorks.map((w) => [String(w.putCode), w.authors]));
+    const byDoi = new Map(prevWorks.filter((w) => w.doi).map((w) => [w.doi.toLowerCase(), w.authors]));
+    for (const w of works) {
+      if (!w.authors || !w.authors.trim()) {
+        const prev = byCode.get(String(w.putCode)) || (w.doi && byDoi.get(w.doi.toLowerCase()));
+        if (prev && prev.trim()) w.authors = prev;
+      }
+    }
+  } catch {
+    // 기존 파일이 없으면(최초 실행) 보존할 것도 없으므로 무시
+  }
+
   // 연도 내림차순, 같은 연도 내에서는 제목순
   works.sort((a, b) => {
     if ((b.year ?? 0) !== (a.year ?? 0)) return (b.year ?? 0) - (a.year ?? 0);
