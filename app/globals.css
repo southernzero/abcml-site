@@ -1,128 +1,202 @@
-/* v4 방식: Tailwind 로드 */
+/* Tailwind v4 */
 @import "tailwindcss";
-
-/* (쓰고 있으면) 타이포그래피 플러그인 */
 @plugin "@tailwindcss/typography";
 
-/* ✅ 여기서 디자인 토큰(색/폰트)을 선언 */
+/* =============================================================
+   ABCML Design System v2 — "Materials & Energy"
+   근거: 배터리·양극재 소재 세계 (코발트=실제 양극 금속, 앰버=충전 에너지)
+   ============================================================= */
 @theme {
-  /* 색상 토큰 → 클래스: bg-brand-navy, text-brand-teal 등 */
-  --color-brand-navy: #1F3A4D;
-  --color-brand-teal: #2FA37B;
-  --color-brand-light: #E6F3EF;
+  /* --- Palette --- */
+  --color-ink:         #0B1A24;  /* near-black navy — 다크 밴드/푸터 */
+  --color-navy:        #12303F;  /* 브랜드 기본 (구조·본문 강조) */
+  --color-cobalt:      #2B5BE0;  /* 주강조 — 링크·활성·시그니처 곡선 (코발트) */
+  --color-cobalt-deep: #1E3FA8;  /* hover */
+  --color-amber:       #E8A23A;  /* 에너지·충전 시그니처 (아껴 씀) */
+  --color-paper:       #F6F8FB;  /* 배경 */
+  --color-panel:       #ECF1F7;  /* 옅은 패널 틴트 */
+  --color-line:        #DCE4EC;  /* 헤어라인 */
+  --color-muted:       #5A6B78;  /* 보조 텍스트 */
 
-  /* 전역 배경/전경 색 → 클래스: bg-background, text-foreground */
-  --color-background: #f7faf9;
-  --color-foreground: #1F3A4D;
+  /* 전역 배경/전경 */
+  --color-background: #F6F8FB;
+  --color-foreground: #12303F;
 
-  /* 폰트 토큰 → 클래스: font-sans */
-  --font-sans: "Pretendard Variable", Pretendard, ui-sans-serif, system-ui;
+  /* 하위호환(기존 컴포넌트) */
+  --color-brand-navy:  #12303F;
+  --color-brand-teal:  #2B5BE0;
+  --color-brand-light: #ECF1F7;
+
+  /* --- Type --- */
+  --font-display: "Space Grotesk", "Pretendard Variable", Pretendard, ui-sans-serif, system-ui;
+  --font-sans:    "Pretendard Variable", Pretendard, ui-sans-serif, system-ui;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
 }
 
-/* 전역 베이스 스타일(원하는 만큼) */
+/* =============================== Base =============================== */
 @layer base {
   html, body {
-    @apply font-sans bg-background text-foreground;
+    @apply font-sans bg-background text-foreground antialiased;
   }
-  h1, h2, h3, .heading {
-    /* tracking-tight 유틸 대신 안전한 CSS */
-    letter-spacing: -0.02em;
+  body { -webkit-font-smoothing: antialiased; }
+
+  h1, h2, h3, .heading { letter-spacing: -0.02em; }
+
+  ::selection { background: color-mix(in srgb, var(--color-cobalt) 22%, transparent); }
+
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cobalt);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
 
-/* 컴포넌트 헬퍼 (버튼 등) */
+/* =========================== Components ============================ */
 @layer components {
-  .btn-brand { @apply rounded-xl px-4 py-2 text-sm font-medium bg-brand-navy text-white hover:opacity-90; }
-  .btn-ghost { @apply rounded-xl px-4 py-2 text-sm border text-brand-navy hover:bg-brand-light/50; }
-  .card      { @apply rounded-2xl border bg-white shadow-sm; }
-}
-/* ================================
-   Mobile Navigation (Hamburger)
-   Tailwind v4 compatible
-================================ */
+  /* 버튼 */
+  .btn-brand {
+    @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold
+           bg-cobalt text-white transition-colors;
+  }
+  .btn-brand:hover { background: var(--color-cobalt-deep); }
 
-/* 네비 래퍼 */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold
+           border border-line text-navy transition-colors;
+  }
+  .btn-ghost:hover { border-color: var(--color-cobalt); color: var(--color-cobalt); }
+
+  .card { @apply rounded-2xl border border-line bg-white; }
+
+  /* 섹션 아이라이어(눈썹): mono·대문자·코발트 */
+  .eyebrow {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-cobalt);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.6rem; height: 1px;
+    background: var(--color-cobalt);
+    display: inline-block;
+  }
+
+  /* mono 데이터 태그(수치·화학식) */
+  .mono { font-family: var(--font-mono); font-variant-ligatures: none; }
+
+  /* 원소 타일 (Li Na Ni Co Mn) */
+  .el-tile {
+    font-family: var(--font-mono);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 3.1rem; height: 3.1rem;
+    border: 1px solid var(--color-line);
+    border-radius: 0.7rem;
+    background: white;
+    line-height: 1;
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+  .el-tile:hover { transform: translateY(-3px); border-color: var(--color-cobalt); box-shadow: 0 8px 20px rgba(43,91,224,.12); }
+  .el-tile .sym { font-size: 1.05rem; font-weight: 600; color: var(--color-navy); }
+  .el-tile .z   { font-size: 0.55rem; color: var(--color-muted); margin-bottom: 2px; }
+}
+
+/* ============================ Nav ============================ */
 .nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--color-background);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: color-mix(in srgb, var(--color-paper) 82%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--color-line);
 }
-
-/* 네비 내부 정렬 */
 .nav-inner {
+  max-width: 72rem;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
+  padding: 14px 20px;
 }
-
-/* 로고 */
 .nav-logo a {
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--color-foreground);
-  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-weight: 700; font-size: 15px; color: var(--color-navy); text-decoration: none;
+  letter-spacing: -0.01em;
 }
-
-/* 메뉴 공통 */
-.nav-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.nav-logo .mark {
+  width: 26px; height: 26px; border-radius: 7px;
+  background: linear-gradient(135deg, var(--color-cobalt), var(--color-navy));
+  display: inline-flex; align-items: center; justify-content: center;
+  color: white; font-family: var(--font-mono); font-size: 12px; font-weight: 600;
 }
-
-.nav-menu a {
-  text-decoration: none;
-  color: var(--color-foreground);
-  font-weight: 500;
-}
-
-/* 데스크탑 메뉴 */
-.nav-menu.desktop {
-  display: flex;
-  gap: 28px;
-}
-
-/* 햄버거 버튼 */
-.nav-hamburger {
-  display: none;
-  font-size: 26px;
-  background: none;
-  border: none;
-  color: var(--color-foreground);
-  cursor: pointer;
-}
-
-/* 모바일 드롭다운 */
+.nav-menu { list-style: none; margin: 0; padding: 0; }
+.nav-menu a { text-decoration: none; color: var(--color-navy); font-weight: 500; font-size: 14.5px; transition: color .15s; }
+.nav-menu a:hover { color: var(--color-cobalt); }
+.nav-menu.desktop { display: flex; gap: 30px; align-items: center; }
+.nav-hamburger { display: none; font-size: 24px; background: none; border: none; color: var(--color-navy); cursor: pointer; }
 .nav-menu.mobile {
-  position: absolute;
-  top: 64px;
-  right: 20px;
-  width: 190px;
-  background: white;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 14px;
-  padding: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: absolute; top: 62px; right: 20px; width: 200px;
+  background: white; border: 1px solid var(--color-line); border-radius: 14px;
+  padding: 14px 16px; box-shadow: 0 16px 40px rgba(11,26,36,.12);
+  display: flex; flex-direction: column; gap: 14px;
 }
-
-.nav-menu.mobile li {
-  margin-bottom: 14px;
-}
-
-.nav-menu.mobile li:last-child {
-  margin-bottom: 0;
-}
-
-/* 반응형 */
 @media (max-width: 768px) {
-  .nav-menu.desktop {
-    display: none;
-  }
-
-  .nav-hamburger {
-    display: block;
-  }
+  .nav-menu.desktop { display: none; }
+  .nav-hamburger { display: block; }
 }
+
+/* ============================ Hero ============================ */
+.hero { position: relative; overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(1100px 520px at 78% -8%, color-mix(in srgb, var(--color-cobalt) 12%, transparent), transparent 60%),
+    radial-gradient(700px 420px at 6% 108%, color-mix(in srgb, var(--color-amber) 10%, transparent), transparent 55%),
+    var(--color-paper);
+}
+/* 미세 격자(결정 격자 은유) */
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(18,48,63,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(18,48,63,.045) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(120% 90% at 60% 0%, black 40%, transparent 82%);
+}
+
+/* 충·방전 곡선 자가 드로잉 */
+.curve-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 2.4s ease forwards .25s;
+}
+.curve-draw.amber { animation-delay: .55s; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rise { opacity: 0; animation: riseIn .7s cubic-bezier(.2,.7,.2,1) forwards; }
+.rise-1 { animation-delay: .05s; }
+.rise-2 { animation-delay: .15s; }
+.rise-3 { animation-delay: .25s; }
+.rise-4 { animation-delay: .35s; }

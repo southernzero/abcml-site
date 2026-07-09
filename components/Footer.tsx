@@ -1,33 +1,51 @@
 'use client';
 export default function Footer() {
   return (
-    <footer className="mt-20 border-t">
-      <div className="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-600">
+    <footer className="mt-8 border-t border-line bg-white">
+      <div className="max-w-6xl mx-auto px-5 py-12 text-sm text-muted">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <p className="font-semibold">Advanced Battery & Cathode Materials Lab</p>
-            <p className="mt-2">인하대학교 이차전지융합학과 & 화학공학과</p>
-            <p className="mt-1">인천 미추홀구 인하로 100 인하대학교 2북관 591호</p>
+            <p className="flex items-center gap-2 font-semibold text-navy">
+              <span
+                className="mono inline-flex items-center justify-center w-6 h-6 rounded-md text-white text-[11px]"
+                style={{ background: 'linear-gradient(135deg, var(--color-cobalt), var(--color-navy))' }}
+                aria-hidden
+              >
+                Li
+              </span>
+              ABCML
+            </p>
+            <p className="mt-3">Advanced Battery &amp; Cathode Materials Lab</p>
+            <p className="mt-1">인하대학교 이차전지융합학과 · 화학공학과</p>
+            <p className="mt-1">인천 미추홀구 인하로 100, 인하대학교 2북관 591호</p>
           </div>
           <div>
-            <p className="font-semibold">연락처</p>
-            <ul className="mt-2 space-y-1">
-              <li>E-mail: nypark@inha.ac.kr</li>
-              <li>TEL: +82) 32-860-8821</li>
+            <p className="eyebrow" style={{ color: 'var(--color-navy)' }}>Contact</p>
+            <ul className="mt-4 space-y-1.5">
+              <li><span className="mono text-muted/70 mr-2">E</span> nypark@inha.ac.kr</li>
+              <li><span className="mono text-muted/70 mr-2">T</span> +82 32-860-8821</li>
             </ul>
           </div>
           <div>
-            <p className="font-semibold">바로가기</p>
-            <ul className="mt-2 space-y-1 underline">
-              <li><a href="/research">Research</a></li>
-              <li><a href="/professor">Professor</a></li>
-              <li><a href="/members">Members</a></li>
-              <li><a href="/publications">Publications</a></li>
-              <li><a href="/gallery">Gallery</a></li>
+            <p className="eyebrow" style={{ color: 'var(--color-navy)' }}>Explore</p>
+            <ul className="mt-4 grid grid-cols-2 gap-y-1.5">
+              {[
+                ['/research', 'Research'],
+                ['/professor', 'Professor'],
+                ['/members', 'Members'],
+                ['/publications', 'Publications'],
+                ['/gallery', 'Gallery'],
+              ].map(([href, label]) => (
+                <li key={href}>
+                  <a href={href} className="hover:text-cobalt transition-colors">{label}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
-        <p className="mt-8 text-xs">© {new Date().getFullYear()} Advanced Battery & Cathode Materials Lab</p>
+        <p className="mono mt-10 text-xs text-muted/80">
+          © {new Date().getFullYear()} ABCML · Inha University
+        </p>
       </div>
     </footer>
   );
