@@ -61,13 +61,12 @@ export default function GalleryPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-50 text-gray-900">
+    <main className="min-h-screen bg-background text-foreground">
       <Nav />
-      <Section title="Gallery" subtitle="Highlights from Our Lab">
+      <Section title="Gallery" eyebrow="Lab life" subtitle="연구실의 순간들">
         {images.length === 0 ? (
-          <div className="text-sm text-gray-500">
-            아직 업로드된 사진이 없어요. <code>/public/gallery</code> 폴더에 이미지를 넣고, 선택적으로
-            <code> captions.json</code>에 메타데이터를 작성하세요.
+          <div className="card p-8 text-sm text-muted">
+            아직 업로드된 사진이 없습니다.
           </div>
         ) : (
           <GalleryClient images={images} />

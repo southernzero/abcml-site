@@ -25,27 +25,28 @@ export default function GalleryClient({ images }: { images: Pic[] }) {
   const MetaLine = ({ pic }: { pic: Pic }) => {
     const parts = [pic.date, pic.place].filter(Boolean);
     if (parts.length === 0) return null;
-    return <div className="text-[11px] text-gray-500 mt-0.5">{parts.join(' · ')}</div>;
+    return <div className="mono text-[0.66rem] text-muted mt-1">{parts.join(' · ')}</div>;
   };
 
   return (
     <>
       {/* 썸네일 그리드 + 캡션/메타 */}
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
         {images.map((p, i) => (
           <button
             key={i}
             onClick={() => onOpen(i)}
-            className="card overflow-hidden group text-left"
+            className="card overflow-hidden group text-left transition-shadow hover:shadow-[0_18px_44px_-24px_rgba(20,48,61,0.32)]"
             aria-label={`Open ${p.title ?? p.alt ?? `image ${i + 1}`}`}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={p.src}
               alt={p.alt ?? `gallery-${i + 1}`}
-              className="w-full h-56 object-cover group-hover:scale-[1.02] transition-transform"
+              className="w-full h-56 object-cover group-hover:scale-[1.03] transition-transform duration-500"
             />
-            <div className="px-3 py-2 border-t bg-white">
-              {p.title && <div className="text-xs font-medium text-gray-700">{p.title}</div>}
+            <div className="px-4 py-3 border-t border-line">
+              {p.title && <div className="text-sm font-medium text-navy">{p.title}</div>}
               <MetaLine pic={p} />
             </div>
           </button>

@@ -32,32 +32,27 @@ export default function PublicationsPage() {
     : '';
 
   return (
-    <main className="min-h-screen bg-slate-50 text-gray-900">
+    <main className="min-h-screen bg-background text-foreground">
       <Nav />
-      <Section title="논문">
+      <Section title="Publications" eyebrow="Peer-reviewed research">
         {publications.length === 0 ? (
-          <div className="rounded-2xl border bg-white shadow-sm p-8 text-center">
-            <div className="text-4xl mb-3">📚</div>
-            <p className="text-gray-700 font-medium">
-              논문 목록을 준비 중입니다.
-            </p>
-            <p className="text-sm text-gray-500 mt-2">
-              잠시 후 다시 방문해주세요.
-            </p>
+          <div className="card p-10 text-center">
+            <p className="text-navy font-medium">논문 목록을 준비 중입니다.</p>
+            <p className="text-sm text-muted mt-2">잠시 후 다시 방문해주세요.</p>
           </div>
         ) : (
           <>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="text-sm">연도 선택</span>
+              <span className="mono text-[0.7rem] uppercase tracking-wider text-muted">Year</span>
               <div className="flex flex-wrap gap-2">
                 {labels.map((y) => (
                   <button
                     key={y}
                     onClick={() => setActiveLabel(y)}
-                    className={`px-3 py-1.5 rounded-xl border text-sm transition ${
+                    className={`mono px-3.5 py-1.5 rounded-full border text-sm transition-colors ${
                       activeLabel === y
-                        ? 'bg-black text-white'
-                        : 'bg-white hover:bg-slate-50'
+                        ? 'bg-teal text-white border-teal'
+                        : 'bg-white border-line text-muted hover:text-navy hover:border-teal'
                     }`}
                   >
                     {y}
@@ -66,7 +61,7 @@ export default function PublicationsPage() {
               </div>
             </div>
 
-            <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {list.map((p, idx) => (
                 <PublicationCard
                   key={p.link + idx}
@@ -82,8 +77,8 @@ export default function PublicationsPage() {
             </div>
 
             {hasSynced && (
-              <p className="mt-8 text-xs text-gray-400">
-                Last synced from ORCID: {syncDateStr}
+              <p className="mono mt-10 text-[0.72rem] text-muted/80">
+                Last synced from ORCID · {syncDateStr}
               </p>
             )}
           </>

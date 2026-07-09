@@ -1,30 +1,85 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Recycle } from 'lucide-react';
+import { publications } from '@/data/publications';
+import { scholar } from '@/data/scholar';
+
+// 실제 데이터 연동: 논문 수(ORCID 동기화), 인용 수(Google Scholar 동기화)
+const PUB_COUNT = publications.length;
+const CITATIONS = scholar.citations.toLocaleString('en-US');
+
 export default function Hero() {
   return (
-    <div className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-sky-50" />
-      <div className="relative max-w-6xl mx-auto px-4 pt-20 pb-16">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+    <header className="hero">
+      <div className="hero-bg" />
+      <div className="hero-grid" />
+
+      <div className="relative max-w-6xl mx-auto px-5 pt-16 pb-20 md:pt-24 md:pb-28">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-10 items-center">
+          {/* --- 좌: 카피 --- */}
           <div>
-            <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">
-              From Material Innovation to Sustainable Battery Technologies
+            <p className="eyebrow rise rise-1">Advanced Battery &amp; Cathode Materials Lab</p>
+
+            <h1
+              className="mt-6 text-[2.15rem] leading-[1.06] md:text-[3.1rem] font-bold text-navy rise rise-2"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              From material innovation
+              <br />
+              to <span className="text-teal">sustainable</span> batteries.
             </h1>
-            <p className="mt-4 text-base md:text-lg text-gray-700">
-              ABCML focuses on developing advanced cathode materials optimized for diverse battery systems, including lithium-ion, sodium-ion, and all-solid-state batteries. Through an integrated approach that tightly connects synthesis, characterization, and application, we pursue industrial applicability and sustainability across the full material lifecycle.
+
+            <p className="mt-6 max-w-xl text-[1.02rem] leading-relaxed text-muted rise rise-3">
+              양극재의 결정 구조와 입자 형상을 원자 단위에서 설계하고, 합성·분석·응용을 거쳐 자원순환까지
+              잇는 <span className="text-navy font-medium">전주기 통합 연구</span>로 차세대 배터리 소재를 만듭니다.
             </p>
-            <div className="mt-6 flex gap-3">
-              <Link href="/research" className="btn-brand" aria-label="연구내용 페이지로 이동">
-                연구 분야 보기
+
+            <div className="mt-8 rise rise-4">
+              <Link href="/research" className="btn-brand" aria-label="연구 분야 보기">
+                연구 분야 보기 <span aria-hidden>→</span>
               </Link>
-              <Link href="/#contact" className="btn-ghost">문의</Link>
             </div>
+
+            <dl className="mt-11 flex flex-wrap gap-x-12 gap-y-6 rise rise-4">
+              <div>
+                <dd className="mono text-xl font-semibold text-navy whitespace-nowrap">{PUB_COUNT}</dd>
+                <dt className="mt-1 text-[0.82rem] font-medium text-navy">Publications</dt>
+                <p className="mono text-[0.66rem] uppercase tracking-wide text-muted mt-0.5">{CITATIONS} citations</p>
+              </div>
+              <div>
+                <dd className="mono text-xl font-semibold text-navy whitespace-nowrap">Li · Na · ASSB</dd>
+                <dt className="mt-1 text-[0.82rem] font-medium text-navy">Battery systems</dt>
+                <p className="mono text-[0.66rem] uppercase tracking-wide text-muted mt-0.5">Li · Na · solid-state</p>
+              </div>
+              <div>
+                <dd className="mono text-xl font-semibold text-navy inline-flex items-center gap-1.5 whitespace-nowrap">
+                  <Recycle size={19} className="text-teal" aria-hidden />
+                  Closed-loop
+                </dd>
+                <dt className="mt-1 text-[0.82rem] font-medium text-navy">Recycling &amp; upcycling</dt>
+                <p className="mono text-[0.66rem] uppercase tracking-wide text-muted mt-0.5">recover → upcycle</p>
+              </div>
+            </dl>
           </div>
-          <div className="aspect-[4/3] bg-white rounded-2xl border shadow-sm p-4 flex items-center justify-center">
-            <img src="/abcml-logo.png" alt="ABCML Logo" className="max-h-full max-w-full object-contain" />
+
+          {/* --- 우: 시각물 슬롯 — 지금은 연구실 로고 (추후 박교수님 동적 이미지로 교체) --- */}
+          <div className="rise rise-3">
+            <figure className="hero-visual mx-auto w-full max-w-[440px]">
+              <div className="hero-logo-panel">
+                <Image
+                  src="/abcml-logo.png"
+                  alt="ABCML — Advanced Battery & Cathode Materials Lab"
+                  width={720}
+                  height={334}
+                  priority
+                  className="w-full max-w-[320px] h-auto"
+                />
+              </div>
+            </figure>
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

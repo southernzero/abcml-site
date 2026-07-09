@@ -82,9 +82,9 @@ const topics: ResearchTopic[] = [
 
 export default function ResearchPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-gray-900">
+    <main className="min-h-screen bg-background text-foreground">
       <Nav />
-      <Section title="Research">
+      <Section title="Research" eyebrow="What we study">
         <ResearchTabsClient topics={topics} />
       </Section>
       <Footer />

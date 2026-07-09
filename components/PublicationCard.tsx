@@ -6,51 +6,48 @@ type Publication = {
   authors: string;
   journal: string;
   link: string;
-  image?: string; // 썸네일 (없거나 404일 수 있음)
+  image?: string;
 };
 
 export default function PublicationCard({ p }: { p: Publication }) {
   const [imgError, setImgError] = useState(false);
-
-  // 이미지 URL이 바뀌면 에러 상태 초기화
   useEffect(() => { setImgError(false); }, [p.image]);
 
   const showImage = Boolean(p.image) && !imgError;
 
   return (
-    <div className="rounded-2xl border bg-white shadow-sm overflow-hidden">
-      {/* 항상 흰 배경 + 고정 비율 박스 */}
-      <div className="aspect-[16/9] bg-white flex items-center justify-center">
+    <a
+      href={p.link}
+      target="_blank"
+      rel="noreferrer"
+      className="group card overflow-hidden flex flex-col transition-shadow hover:shadow-[0_20px_50px_-26px_rgba(20,48,61,0.34)]"
+    >
+      <div className="aspect-[16/9] bg-white flex items-center justify-center overflow-hidden border-b border-line">
         {showImage ? (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={p.image}
             alt={p.title}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
             loading="lazy"
             decoding="async"
-            onError={() => setImgError(true)}   // ← 실패 시 흰 배경 플레이스홀더로 전환
+            onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-xs text-gray-400">
-            {/* 필요하면 아이콘/텍스트 변경 가능 */}
-            No Image
+          <div className="mono w-full h-full flex items-center justify-center text-[0.7rem] uppercase tracking-wider text-muted/60">
+            No image
           </div>
         )}
       </div>
 
-      <div className="p-4">
-        <h3 className="font-semibold text-sm">{p.title}</h3>
-        <p className="text-xs text-gray-600 mt-1">{p.authors}</p>
-        <p className="text-xs mt-1"><span className="font-semibold">{p.journal}</span></p>
-        <a
-          href={p.link}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-block mt-2 text-sm underline"
-        >
-          View
-        </a>
+      <div className="p-4 flex flex-col flex-1">
+        <h3 className="font-semibold text-[0.92rem] leading-snug text-navy line-clamp-3">{p.title}</h3>
+        <p className="text-[0.78rem] text-muted mt-1.5 line-clamp-2">{p.authors}</p>
+        <p className="mono text-[0.74rem] text-teal-deep mt-2 line-clamp-1">{p.journal}</p>
+        <span className="mt-3 inline-flex items-center gap-1 text-[0.78rem] font-medium text-teal">
+          View paper <span aria-hidden className="transition-transform group-hover:translate-x-0.5">↗</span>
+        </span>
       </div>
-    </div>
+    </a>
   );
 }

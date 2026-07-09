@@ -40,52 +40,60 @@ export default function ResearchTabsClient({ topics }: { topics: ResearchTopic[]
           <button
             key={t.slug}
             onClick={() => setActive(i)}
-            className={`card overflow-hidden text-left transition ring-1 ring-transparent hover:ring-brand-navy/20 ${
-              active === i ? 'outline outline-2 outline-brand-navy' : ''
+            className={`card overflow-hidden text-left transition-shadow ${
+              active === i
+                ? 'outline outline-2 outline-teal shadow-[0_18px_44px_-24px_rgba(20,48,61,0.32)]'
+                : 'hover:shadow-[0_14px_36px_-24px_rgba(20,48,61,0.28)]'
             }`}
             aria-pressed={active === i}
           >
-            <div className="aspect-[5/3] bg-white flex items-center justify-center">
+            <div className="aspect-[5/3] bg-white flex items-center justify-center border-b border-line">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={t.cover} alt={t.title} className="w-full h-full object-contain" />
             </div>
-            <div className="p-4">
-              <div className="font-semibold">{t.title}</div>
+            <div className="p-4 flex items-center gap-2">
+              <span className={`mono text-[0.7rem] ${active === i ? 'text-teal' : 'text-muted'}`}>
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span className="font-semibold text-navy text-[0.92rem] leading-snug">{t.title}</span>
             </div>
           </button>
         ))}
       </div>
 
       {/* 하단 본문: 2열(왼쪽 그림, 오른쪽 글) — 모바일에서는 1열로 스택 */}
-      <div className="card p-5">
-        <h3 className="text-lg font-semibold">{topics[active].title}</h3>
+      <div>
+        <h3 className="text-xl md:text-2xl font-bold text-navy" style={{ fontFamily: 'var(--font-display)' }}>
+          {topics[active].title}
+        </h3>
 
-        <div className="mt-4 space-y-6">
+        <div className="mt-6 space-y-6">
           {secs.map((s, i) => (
-            <div key={i} className="grid md:grid-cols-2 gap-4 items-start">
+            <div key={i} className="grid md:grid-cols-2 gap-5 items-stretch">
               {/* 왼쪽: 이미지 */}
               <button
                 onClick={() => setLightbox({ open: true, idx: i })}
-                className="card overflow-hidden text-left group"
+                className="card overflow-hidden text-left group transition-shadow hover:shadow-[0_16px_40px_-24px_rgba(20,48,61,0.3)]"
                 aria-label={s.title ? `Open ${s.title}` : 'Open image'}
               >
                 <div className="aspect-[4/3] bg-white flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={s.src}
                     alt={s.title ?? 'image'}
-                    className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform"
+                    className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-500"
                   />
                 </div>
-                {s.title && (
-                  <div className="px-3 py-2 text-xs text-gray-600 border-t bg-white">{s.title}</div>
-                )}
               </button>
 
               {/* 오른쪽: 텍스트(한/영) */}
-              <div className="card p-4">
-                {s.title && <div className="text-sm font-semibold mb-2">{s.title}</div>}
-                <p className="text-sm text-gray-800 whitespace-pre-line">{s.text.ko}</p>
-                <hr className="my-3 border-slate-200" />
-                <p className="text-sm text-gray-700 whitespace-pre-line italic">{s.text.en}</p>
+              <div className="card p-6 flex flex-col justify-center">
+                <p className="eyebrow mb-3">{String(i + 1).padStart(2, '0')}</p>
+                {s.title && <div className="font-semibold text-navy mb-3 leading-snug">{s.title}</div>}
+                <p className="text-[0.92rem] leading-relaxed text-navy whitespace-pre-line">{s.text.ko}</p>
+                <p className="mt-4 pt-4 border-t border-line text-[0.86rem] leading-relaxed text-muted whitespace-pre-line">
+                  {s.text.en}
+                </p>
               </div>
             </div>
           ))}
