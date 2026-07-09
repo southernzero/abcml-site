@@ -13,36 +13,31 @@ export default function MembersPage() {
   const groups = tab === 'current' ? currentMemberGroups : alumniGroups;
 
   return (
-    <main className="min-h-screen bg-slate-50 text-gray-900">
+    <main className="min-h-screen bg-background text-foreground">
       <Nav />
 
-      <Section title="Members">
+      <Section title="Members" eyebrow="People">
         {/* 탭 */}
-        <div className="mb-6 flex gap-2">
-          <button
-            onClick={() => setTab('current')}
-            className={`px-4 py-2 rounded-full border text-sm ${
-              tab === 'current' ? 'bg-brand-navy text-white' : 'bg-white hover:bg-slate-50'
-            }`}
-          >
-            Current
-          </button>
-          <button
-            onClick={() => setTab('alumni')}
-            className={`px-4 py-2 rounded-full border text-sm ${
-              tab === 'alumni' ? 'bg-brand-navy text-white' : 'bg-white hover:bg-slate-50'
-            }`}
-          >
-            Alumni
-          </button>
+        <div className="mb-8 inline-flex gap-1 rounded-full border border-line bg-white p-1">
+          {(['current', 'alumni'] as TabKey[]).map((key) => (
+            <button
+              key={key}
+              onClick={() => setTab(key)}
+              className={`px-5 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                tab === key ? 'bg-teal text-white' : 'text-muted hover:text-navy'
+              }`}
+            >
+              {key === 'current' ? 'Current' : 'Alumni'}
+            </button>
+          ))}
         </div>
 
         {/* 그룹별 그리드 */}
-        <div className="space-y-8">
+        <div className="space-y-12">
           {groups.map((g, gi) => (
             <section key={gi}>
-              <h3 className="text-base font-semibold mb-3">{g.title}</h3>
-              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <p className="eyebrow mb-5">{g.title}</p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                 {g.items.filter(Boolean).map((m, i) => (
                   <MemberCard key={i} m={m} />
                 ))}

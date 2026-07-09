@@ -34,11 +34,10 @@ export default function Hero() {
               </Link>
             </div>
 
-            <dl className="mt-11 grid grid-cols-3 max-w-md gap-6 rise rise-4">
+            <dl className="mt-11 flex flex-wrap gap-x-14 gap-y-6 rise rise-4">
               {[
-                ['3', 'Battery systems', 'Li · Na · ASSB'],
                 ['30+', 'Publications', 'since 2018'],
-                ['100%', 'Lifecycle', 'synth → recycle'],
+                ['Li · Na · ASSB', 'Battery systems', 'lithium · sodium · solid-state'],
               ].map(([n, k, s]) => (
                 <div key={k}>
                   <dd className="mono text-2xl font-semibold text-navy">{n}</dd>

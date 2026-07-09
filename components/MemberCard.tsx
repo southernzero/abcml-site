@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 export type Member = {
   name: string;
   role: 'Postdoc' | 'PhD' | 'MS' | 'UG' | 'Staff' | 'Alumni' | string;
-  image?: string;           // /members/xxx.jpg (없어도 됨)
+  image?: string;
   email?: string;
-  note?: string;            // 전공/연구주제/입학연도 등
-  link?: string;            // 개인 페이지/구글스칼라 등
+  note?: string;
+  link?: string;
 };
 
 export default function MemberCard({ m }: { m: Member }) {
@@ -17,10 +17,10 @@ export default function MemberCard({ m }: { m: Member }) {
   const showImage = Boolean(m.image) && !imgError;
 
   return (
-    <article className="card overflow-hidden">
-      {/* 정사각형 프레임 + 흰 배경 + contain (잘림 방지) */}
-      <div className="aspect-square bg-white flex items-center justify-center">
+    <article className="card overflow-hidden transition-shadow hover:shadow-[0_18px_44px_-24px_rgba(20,48,61,0.32)]">
+      <div className="aspect-square bg-white flex items-center justify-center overflow-hidden">
         {showImage ? (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={m.image}
             alt={m.name}
@@ -30,25 +30,27 @@ export default function MemberCard({ m }: { m: Member }) {
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-xs text-gray-400">
-            No Image
+          <div className="mono w-full h-full flex items-center justify-center text-[0.7rem] uppercase tracking-wider text-muted/60">
+            No image
           </div>
         )}
       </div>
 
-      <div className="p-3">
-        <div className="font-semibold">{m.name}</div>
-        <div className="text-xs text-gray-600 mt-0.5">{m.role}</div>
-        {m.note && <div className="text-xs text-gray-600 mt-1">{m.note}</div>}
+      <div className="p-4 border-t border-line">
+        <div className="font-semibold text-navy">{m.name}</div>
+        <div className="mono text-[0.66rem] uppercase tracking-[0.14em] text-teal mt-1">{m.role}</div>
+        {m.note && <div className="text-[0.8rem] text-muted mt-1.5 leading-snug">{m.note}</div>}
 
-        <div className="mt-2 text-xs space-x-3">
-          {m.email && (
-            <a href={`mailto:${m.email}`} className="underline">Email</a>
-          )}
-          {m.link && (
-            <a href={m.link} target="_blank" rel="noreferrer" className="underline">Link</a>
-          )}
-        </div>
+        {(m.email || m.link) && (
+          <div className="mt-3 flex gap-4 text-[0.78rem]">
+            {m.email && (
+              <a href={`mailto:${m.email}`} className="text-teal hover:underline">Email</a>
+            )}
+            {m.link && (
+              <a href={m.link} target="_blank" rel="noreferrer" className="text-teal hover:underline">Link ↗</a>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );

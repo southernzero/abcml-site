@@ -10,28 +10,24 @@ export default function NoticeListPage() {
   const list = [...notices].sort((a, b) => b.date.localeCompare(a.date));
 
   return (
-    <main className="min-h-screen bg-slate-50 text-gray-900">
+    <main className="min-h-screen bg-background text-foreground">
       <Nav />
-      <Section title="Notice">
+      <Section title="Notices" eyebrow="Announcements">
         {list.length === 0 ? (
-          <div className="rounded-2xl border bg-white shadow-sm p-6 text-sm text-gray-500">
-            등록된 공지가 없습니다.
-          </div>
+          <div className="card p-8 text-sm text-muted">등록된 공지가 없습니다.</div>
         ) : (
-          <div className="rounded-2xl border bg-white shadow-sm">
+          <div className="card divide-y divide-line overflow-hidden">
             {list.map((x) => (
               <Link
                 key={x.id}
                 href={`/notices/${x.id}`}
-                className="block p-4 border-b last:border-0 hover:bg-slate-50"
+                className="block px-5 py-4 hover:bg-panel/60 transition-colors"
               >
-                <div className="flex items-baseline justify-between">
-                  <span className="font-medium">{x.title}</span>
-                  <span className="text-xs text-gray-500">{x.date}</span>
+                <div className="flex items-baseline justify-between gap-4">
+                  <span className="font-medium text-navy">{x.title}</span>
+                  <span className="mono shrink-0 text-xs text-muted">{x.date}</span>
                 </div>
-                {x.summary && (
-                  <p className="text-sm text-gray-600 mt-1">{x.summary}</p>
-                )}
+                {x.summary && <p className="text-sm text-muted mt-1.5 line-clamp-2">{x.summary}</p>}
               </Link>
             ))}
           </div>

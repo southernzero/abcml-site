@@ -29,11 +29,11 @@ export default async function NoticeDetail(
   if (!item) return notFound();
 
   return (
-    <main className="min-h-screen bg-slate-50 text-gray-900">
+    <main className="min-h-screen bg-background text-foreground">
       <Nav />
-      <Section title={item.title}>
-        <p className="text-sm text-gray-500">{item.date}</p>
-        <div className="prose mt-4 whitespace-pre-line">
+      <Section title={item.title} eyebrow="Notice">
+        <p className="mono text-xs text-muted">{item.date}</p>
+        <div className="prose prose-slate mt-5 max-w-2xl whitespace-pre-line text-navy">
           {item.body ?? '상세 내용 준비 중입니다.'}
         </div>
       </Section>

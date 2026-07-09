@@ -39,16 +39,16 @@ export default async function NewsDetail(
   const content = item.body ?? item.summary ?? '상세 내용 준비 중입니다.';
 
   return (
-    <main className="min-h-screen bg-slate-50 text-gray-900">
+    <main className="min-h-screen bg-background text-foreground">
       <Nav />
 
-      <Section title={item.title}>
+      <Section title={item.title} eyebrow="News">
         {/* 날짜 */}
-        <p className="text-sm text-gray-500 mb-4">{item.date}</p>
+        <p className="mono text-xs text-muted mb-6">{item.date}</p>
 
         {/* 이미지 */}
         {item.image && (
-          <div className="relative w-full max-w-3xl mx-auto mb-6 aspect-[16/9] rounded-xl overflow-hidden">
+          <div className="relative w-full max-w-3xl mx-auto mb-8 aspect-[16/9] rounded-2xl overflow-hidden border border-line">
             <Image
               src={item.image}
               alt={item.title}
@@ -60,7 +60,7 @@ export default async function NewsDetail(
         )}
 
         {/* 본문 */}
-        <div className="prose prose-slate max-w-none">
+        <div className="prose prose-slate max-w-2xl text-navy">
           {content
             .split('\n')
             .filter(Boolean)
@@ -74,7 +74,7 @@ export default async function NewsDetail(
                       href={line}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 underline break-all"
+                      className="text-teal underline break-all"
                     >
                       {line}
                     </a>
