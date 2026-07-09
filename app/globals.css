@@ -160,6 +160,31 @@
   mask-image: radial-gradient(120% 90% at 60% 0%, black 40%, transparent 82%);
 }
 
+/* 히어로 시각물 — 은은한 부유 + teal 발광 맥동 (동적 느낌) */
+.hero-visual { position: relative; animation: heroFloat 7s ease-in-out infinite; }
+.hero-visual img {
+  display: block;
+  box-shadow: 0 34px 80px -34px rgba(20, 48, 61, 0.55);
+}
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: -6%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(47,163,123,0.24), transparent 62%);
+  filter: blur(26px);
+  z-index: -1;
+  animation: heroPulse 5.5s ease-in-out infinite;
+}
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@keyframes heroPulse {
+  0%, 100% { opacity: 0.5;  transform: scale(0.96); }
+  50%      { opacity: 0.9;  transform: scale(1.05); }
+}
+
 @keyframes riseIn {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
