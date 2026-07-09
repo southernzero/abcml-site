@@ -39,6 +39,15 @@ try {
     process.exit(0);
   }
 
+  // 실제 지표가 바뀔 때만 파일을 갱신한다(불필요한 커밋·재배포 방지).
+  // updatedAt 은 지표가 바뀔 때만 갱신 → 값이 같으면 파일 무변경 → push 안 함.
+  let prev = {};
+  try { prev = JSON.parse(readFileSync(OUT, 'utf-8')); } catch {}
+  if (prev.citations === nums[0] && prev.hIndex === nums[2] && prev.i10Index === nums[4]) {
+    console.log(`변경 없음(${nums[0]} citations) — 파일 유지, push skip`);
+    process.exit(0);
+  }
+
   const data = {
     citations: nums[0],
     citationsSince: nums[1],
@@ -49,7 +58,7 @@ try {
   };
 
   writeFileSync(OUT, JSON.stringify(data, null, 2) + '\n');
-  console.log(`✅ Scholar 동기화: ${data.citations} citations · h-index ${data.hIndex}`);
+  console.log(`✅ Scholar 지표 변경 → 갱신: ${data.citations} citations · h-index ${data.hIndex}`);
 } catch (e) {
   console.warn('⚠️ Scholar 동기화 예외 — 기존 값 유지:', String(e));
   process.exit(0);
