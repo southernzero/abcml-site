@@ -3,9 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Recycle } from 'lucide-react';
 import { publications } from '@/data/publications';
+import { scholar } from '@/data/scholar';
 
-// 실제 논문 수와 연동 (ORCID 자동 동기화 → data/publications.json → 여기 반영)
+// 실제 데이터 연동: 논문 수(ORCID 동기화), 인용 수(Google Scholar 동기화)
 const PUB_COUNT = publications.length;
+const CITATIONS = scholar.citations.toLocaleString('en-US');
 
 export default function Hero() {
   return (
@@ -33,34 +35,35 @@ export default function Hero() {
               잇는 <span className="text-navy font-medium">전주기 통합 연구</span>로 차세대 배터리 소재를 만듭니다.
             </p>
 
-            {/* 자원순환(recycling) 강조 칩 */}
-            <div className="mt-6 rise rise-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal-soft px-4 py-1.5 text-[0.85rem] font-medium text-teal-deep">
-                <Recycle size={16} aria-hidden />
-                폐배터리 자원순환 · 리사이클링 → 업사이클링
-              </span>
-            </div>
-
-            <div className="mt-7 rise rise-4">
+            <div className="mt-8 rise rise-4">
               <Link href="/research" className="btn-brand" aria-label="연구 분야 보기">
                 연구 분야 보기 <span aria-hidden>→</span>
               </Link>
             </div>
 
-            <dl className="mt-11 flex flex-wrap gap-x-14 gap-y-6 rise rise-4">
+            <dl className="mt-11 flex flex-wrap gap-x-12 gap-y-7 rise rise-4">
               <div>
                 <dd className="mono text-2xl font-semibold text-navy">{PUB_COUNT}</dd>
                 <dt className="mt-1 text-[0.82rem] font-medium text-navy">Publications</dt>
-                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">
-                  auto-synced · ORCID
-                </p>
+                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">since 2018</p>
+              </div>
+              <div>
+                <dd className="mono text-2xl font-semibold text-navy">{CITATIONS}</dd>
+                <dt className="mt-1 text-[0.82rem] font-medium text-navy">Citations</dt>
+                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">Google Scholar</p>
               </div>
               <div>
                 <dd className="mono text-2xl font-semibold text-navy">Li · Na · ASSB</dd>
                 <dt className="mt-1 text-[0.82rem] font-medium text-navy">Battery systems</dt>
-                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">
-                  lithium · sodium · solid-state
-                </p>
+                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">lithium · sodium · solid-state</p>
+              </div>
+              <div>
+                <dd className="mono text-2xl font-semibold text-navy inline-flex items-center gap-2">
+                  <Recycle size={22} className="text-teal" aria-hidden />
+                  Closed-loop
+                </dd>
+                <dt className="mt-1 text-[0.82rem] font-medium text-navy">Recycling &amp; upcycling</dt>
+                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">recover · resynthesize · upcycle</p>
               </div>
             </dl>
           </div>
