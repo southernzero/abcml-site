@@ -160,19 +160,28 @@
   mask-image: radial-gradient(120% 90% at 60% 0%, black 40%, transparent 82%);
 }
 
-/* 히어로 시각물 — 은은한 부유 + teal 발광 맥동 (동적 느낌) */
+/* 히어로 시각물 슬롯 — 은은한 부유 + teal 발광 맥동 (동적 느낌).
+   현재 내용물 = 연구실 로고 패널. 추후 박교수님 동적 이미지로 교체 예정. */
 .hero-visual { position: relative; animation: heroFloat 7s ease-in-out infinite; }
-.hero-visual img {
-  display: block;
-  box-shadow: 0 34px 80px -34px rgba(20, 48, 61, 0.55);
+.hero-logo-panel {
+  border-radius: 1.75rem;
+  border: 1px solid var(--color-line);
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--color-teal-soft), transparent 72%),
+    #ffffff;
+  padding: 3.4rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 72px -34px rgba(20, 48, 61, 0.30);
 }
 .hero-visual::before {
   content: "";
   position: absolute;
-  inset: -6%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(47,163,123,0.24), transparent 62%);
-  filter: blur(26px);
+  inset: -8%;
+  border-radius: 40%;
+  background: radial-gradient(circle, rgba(47,163,123,0.18), transparent 64%);
+  filter: blur(30px);
   z-index: -1;
   animation: heroPulse 5.5s ease-in-out infinite;
 }
