@@ -34,18 +34,18 @@ export default function HomePage() {
         <p className="max-w-3xl text-[1.05rem] leading-relaxed text-navy">
           ABCML은 Li-ion · Na-ion · 전고체 배터리를 아우르는 차세대 시스템에 최적화된 소재를 개발합니다.
           합성과 분석을 토대로 성능을 끌어올리고, 나아가 소재 재활용까지 확장하는 전주기적 통합 연구로
-          <span className="text-cobalt font-medium"> 근본적 이해 · 산업적 활용성 · 지속가능성</span>을 동시에 실현합니다.
+          <span className="text-teal font-medium"> 근본적 이해 · 산업적 활용성 · 지속가능성</span>을 동시에 실현합니다.
         </p>
 
         <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {CYCLE.map(([n, en, ko, desc], i) => (
             <li key={n} className="relative card p-5">
               <div className="flex items-baseline justify-between">
-                <span className="mono text-sm font-semibold text-cobalt">{n}</span>
+                <span className="mono text-sm font-semibold text-teal">{n}</span>
                 {i < CYCLE.length - 1 ? (
                   <span aria-hidden className="mono text-line text-lg">→</span>
                 ) : (
-                  <span aria-hidden className="mono text-amber text-lg">↻</span>
+                  <span aria-hidden className="mono text-teal-deep text-lg">↻</span>
                 )}
               </div>
               <h3 className="mt-3 text-lg font-semibold text-navy" style={{ fontFamily: 'var(--font-display)' }}>
@@ -74,7 +74,7 @@ export default function HomePage() {
           ))}
         </ul>
         <div className="mt-4">
-          <Link href="/notices" className="text-sm font-medium text-cobalt hover:underline">공지 더 보기 →</Link>
+          <Link href="/notices" className="text-sm font-medium text-teal hover:underline">공지 더 보기 →</Link>
         </div>
       </Section>
 
@@ -112,7 +112,7 @@ export default function HomePage() {
           ))}
         </div>
         <div className="mt-4">
-          <Link href="/news" className="text-sm font-medium text-cobalt hover:underline">뉴스 더 보기 →</Link>
+          <Link href="/news" className="text-sm font-medium text-teal hover:underline">뉴스 더 보기 →</Link>
         </div>
       </Section>
 
@@ -124,12 +124,12 @@ export default function HomePage() {
               className="absolute inset-0 opacity-[0.5]"
               style={{
                 background:
-                  'radial-gradient(600px 300px at 88% -20%, rgba(43,91,224,0.45), transparent 60%), radial-gradient(400px 240px at 0% 120%, rgba(232,162,58,0.28), transparent 55%)',
+                  'radial-gradient(600px 300px at 88% -20%, rgba(47,163,123,0.42), transparent 60%), radial-gradient(400px 240px at 0% 120%, rgba(47,163,123,0.18), transparent 55%)',
               }}
             />
             <div className="relative grid md:grid-cols-[1fr_auto] gap-8 md:items-center">
               <div>
-                <p className="eyebrow" style={{ color: 'var(--color-amber)' }}>Join / Collaborate</p>
+                <p className="eyebrow" style={{ color: 'var(--color-teal)' }}>Join / Collaborate</p>
                 <h2 className="mt-4 text-[1.7rem] md:text-[2.1rem] font-bold" style={{ fontFamily: 'var(--font-display)' }}>
                   대학원생 · 공동연구를 찾습니다
                 </h2>

@@ -3,29 +3,29 @@
 @plugin "@tailwindcss/typography";
 
 /* =============================================================
-   ABCML Design System v2 — "Materials & Energy"
-   근거: 배터리·양극재 소재 세계 (코발트=실제 양극 금속, 앰버=충전 에너지)
+   ABCML Design System v2
+   팔레트·모티프를 ABCML 로고에서 도출 (navy 워드마크 + teal 배터리 층상 구조)
    ============================================================= */
 @theme {
-  /* --- Palette --- */
-  --color-ink:         #0B1A24;  /* near-black navy — 다크 밴드/푸터 */
-  --color-navy:        #12303F;  /* 브랜드 기본 (구조·본문 강조) */
-  --color-cobalt:      #2B5BE0;  /* 주강조 — 링크·활성·시그니처 곡선 (코발트) */
-  --color-cobalt-deep: #1E3FA8;  /* hover */
-  --color-amber:       #E8A23A;  /* 에너지·충전 시그니처 (아껴 씀) */
-  --color-paper:       #F6F8FB;  /* 배경 */
-  --color-panel:       #ECF1F7;  /* 옅은 패널 틴트 */
-  --color-line:        #DCE4EC;  /* 헤어라인 */
-  --color-muted:       #5A6B78;  /* 보조 텍스트 */
+  /* --- Palette — ABCML 로고에서 추출 (navy 워드마크 + teal 배터리 층) --- */
+  --color-ink:       #14303D;  /* 로고 navy 심화 — 다크 밴드/푸터 */
+  --color-navy:      #1F3A4D;  /* 로고 워드마크 navy (본문·구조) */
+  --color-teal:      #2FA37B;  /* 로고 배터리 teal (주강조) */
+  --color-teal-deep: #1E7A5A;  /* hover·심화 */
+  --color-teal-soft: #E7F2EE;  /* 옅은 teal 틴트 */
+  --color-paper:     #F5F8F7;  /* 배경 (teal 쪽으로 미세 편향된 중립) */
+  --color-panel:     #ECF3F0;  /* 패널 틴트 */
+  --color-line:      #D7E4DF;  /* 헤어라인 (teal-gray) */
+  --color-muted:     #566B67;  /* 보조 텍스트 */
 
   /* 전역 배경/전경 */
-  --color-background: #F6F8FB;
-  --color-foreground: #12303F;
+  --color-background: #F5F8F7;
+  --color-foreground: #1F3A4D;
 
   /* 하위호환(기존 컴포넌트) */
-  --color-brand-navy:  #12303F;
-  --color-brand-teal:  #2B5BE0;
-  --color-brand-light: #ECF1F7;
+  --color-brand-navy:  #1F3A4D;
+  --color-brand-teal:  #2FA37B;
+  --color-brand-light: #E7F2EE;
 
   /* --- Type --- */
   --font-display: "Space Grotesk", "Pretendard Variable", Pretendard, ui-sans-serif, system-ui;
@@ -42,12 +42,12 @@
 
   h1, h2, h3, .heading { letter-spacing: -0.02em; }
 
-  ::selection { background: color-mix(in srgb, var(--color-cobalt) 22%, transparent); }
+  ::selection { background: color-mix(in srgb, var(--color-teal) 22%, transparent); }
 
   a { color: inherit; }
 
   :focus-visible {
-    outline: 2px solid var(--color-cobalt);
+    outline: 2px solid var(--color-teal);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -66,26 +66,26 @@
   /* 버튼 */
   .btn-brand {
     @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold
-           bg-cobalt text-white transition-colors;
+           bg-teal text-white transition-colors;
   }
-  .btn-brand:hover { background: var(--color-cobalt-deep); }
+  .btn-brand:hover { background: var(--color-teal-deep); }
 
   .btn-ghost {
     @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold
            border border-line text-navy transition-colors;
   }
-  .btn-ghost:hover { border-color: var(--color-cobalt); color: var(--color-cobalt); }
+  .btn-ghost:hover { border-color: var(--color-teal); color: var(--color-teal); }
 
   .card { @apply rounded-2xl border border-line bg-white; }
 
-  /* 섹션 아이라이어(눈썹): mono·대문자·코발트 */
+  /* 섹션 아이브로(눈썹): mono·대문자·teal */
   .eyebrow {
     font-family: var(--font-mono);
     text-transform: uppercase;
     letter-spacing: 0.18em;
     font-size: 0.72rem;
     font-weight: 500;
-    color: var(--color-cobalt);
+    color: var(--color-teal);
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
@@ -93,30 +93,12 @@
   .eyebrow::before {
     content: "";
     width: 1.6rem; height: 1px;
-    background: var(--color-cobalt);
+    background: var(--color-teal);
     display: inline-block;
   }
 
   /* mono 데이터 태그(수치·화학식) */
   .mono { font-family: var(--font-mono); font-variant-ligatures: none; }
-
-  /* 원소 타일 (Li Na Ni Co Mn) */
-  .el-tile {
-    font-family: var(--font-mono);
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 3.1rem; height: 3.1rem;
-    border: 1px solid var(--color-line);
-    border-radius: 0.7rem;
-    background: white;
-    line-height: 1;
-    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
-  }
-  .el-tile:hover { transform: translateY(-3px); border-color: var(--color-cobalt); box-shadow: 0 8px 20px rgba(43,91,224,.12); }
-  .el-tile .sym { font-size: 1.05rem; font-weight: 600; color: var(--color-navy); }
-  .el-tile .z   { font-size: 0.55rem; color: var(--color-muted); margin-bottom: 2px; }
 }
 
 /* ============================ Nav ============================ */
@@ -137,19 +119,15 @@
   padding: 14px 20px;
 }
 .nav-logo a {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  font-weight: 700; font-size: 15px; color: var(--color-navy); text-decoration: none;
-  letter-spacing: -0.01em;
+  display: inline-flex; align-items: center; text-decoration: none;
 }
-.nav-logo .mark {
-  width: 26px; height: 26px; border-radius: 7px;
-  background: linear-gradient(135deg, var(--color-cobalt), var(--color-navy));
-  display: inline-flex; align-items: center; justify-content: center;
-  color: white; font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+.nav-logo img {
+  height: 34px; width: auto; display: block;
 }
+@media (max-width: 480px) { .nav-logo img { height: 30px; } }
 .nav-menu { list-style: none; margin: 0; padding: 0; }
 .nav-menu a { text-decoration: none; color: var(--color-navy); font-weight: 500; font-size: 14.5px; transition: color .15s; }
-.nav-menu a:hover { color: var(--color-cobalt); }
+.nav-menu a:hover { color: var(--color-teal); }
 .nav-menu.desktop { display: flex; gap: 30px; align-items: center; }
 .nav-hamburger { display: none; font-size: 24px; background: none; border: none; color: var(--color-navy); cursor: pointer; }
 .nav-menu.mobile {
@@ -168,8 +146,8 @@
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(1100px 520px at 78% -8%, color-mix(in srgb, var(--color-cobalt) 12%, transparent), transparent 60%),
-    radial-gradient(700px 420px at 6% 108%, color-mix(in srgb, var(--color-amber) 10%, transparent), transparent 55%),
+    radial-gradient(1100px 520px at 78% -8%, color-mix(in srgb, var(--color-teal) 12%, transparent), transparent 60%),
+    radial-gradient(700px 420px at 6% 108%, color-mix(in srgb, var(--color-teal-deep) 10%, transparent), transparent 55%),
     var(--color-paper);
 }
 /* 미세 격자(결정 격자 은유) */
@@ -181,15 +159,6 @@
   background-size: 46px 46px;
   mask-image: radial-gradient(120% 90% at 60% 0%, black 40%, transparent 82%);
 }
-
-/* 충·방전 곡선 자가 드로잉 */
-.curve-draw {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw 2.4s ease forwards .25s;
-}
-.curve-draw.amber { animation-delay: .55s; }
-@keyframes draw { to { stroke-dashoffset: 0; } }
 
 @keyframes riseIn {
   from { opacity: 0; transform: translateY(14px); }

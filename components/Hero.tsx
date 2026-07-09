@@ -20,7 +20,7 @@ export default function Hero() {
             >
               From material innovation
               <br />
-              to <span className="text-cobalt">sustainable</span> batteries.
+              to <span className="text-teal">sustainable</span> batteries.
             </h1>
 
             <p className="mt-6 max-w-xl text-[1.02rem] leading-relaxed text-muted rise rise-3">

@@ -15,9 +15,9 @@ export default function RodParticle() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const NAVY = '#12303F';
-    const COBALT = '#2B5BE0';
-    const AMBER = '#E8A23A';
+    const NAVY = '#1F3A4D';       // 로고 워드마크 navy
+    const TEAL = '#2FA37B';       // 로고 배터리 teal
+    const TEAL_DEEP = '#1E7A5A';  // 심화 teal
 
     // 결정적 의사난수 (렌더 안정)
     let seed = 20260709;
@@ -34,7 +34,7 @@ export default function RodParticle() {
       const r0 = 0.07 + rand() * 0.05;
       const w = 0.7 + rand() * 1.3;
       const roll = rand();
-      const color = roll > 0.95 ? AMBER : (roll > 0.52 ? COBALT : NAVY);
+      const color = roll > 0.62 ? TEAL : (roll > 0.30 ? NAVY : TEAL_DEEP);
       rods.push({ a, r0, r1, w, color, curve: (rand() - 0.5) * 0.09 });
     }
 
@@ -56,8 +56,8 @@ export default function RodParticle() {
 
       // 은은한 배경 글로우
       const glow = ctx.createRadialGradient(cx, cy, R * 0.1, cx, cy, R * 1.15);
-      glow.addColorStop(0, 'rgba(43,91,224,0.10)');
-      glow.addColorStop(1, 'rgba(43,91,224,0)');
+      glow.addColorStop(0, 'rgba(47,163,123,0.12)');
+      glow.addColorStop(1, 'rgba(47,163,123,0)');
       ctx.fillStyle = glow;
       ctx.beginPath();
       ctx.arc(cx, cy, R * 1.15, 0, Math.PI * 2);
@@ -123,7 +123,7 @@ export default function RodParticle() {
     <figure className="relative mx-auto w-full max-w-[440px]">
       <canvas ref={ref} className="block w-full aspect-square" aria-hidden="true" />
       <figcaption className="mono mt-3 flex items-center justify-center gap-2 text-[0.72rem] text-muted">
-        <span className="inline-block w-2 h-2 rounded-full" style={{ background: 'var(--color-cobalt)' }} />
+        <span className="inline-block w-2 h-2 rounded-full" style={{ background: 'var(--color-teal)' }} />
         radially-aligned rod-type primary particle
       </figcaption>
     </figure>

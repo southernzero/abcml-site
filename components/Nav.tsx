@@ -19,9 +19,9 @@ export default function Nav() {
     <nav className="nav">
       <div className="nav-inner">
         <div className="nav-logo">
-          <Link href="/">
-            <span className="mark" aria-hidden>Li</span>
-            ABCML
+          <Link href="/" aria-label="ABCML — Advanced Battery & Cathode Materials Lab, 홈">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/abcml-logo-compact.png" alt="ABCML" />
           </Link>
         </div>
 
