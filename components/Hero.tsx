@@ -41,29 +41,24 @@ export default function Hero() {
               </Link>
             </div>
 
-            <dl className="mt-11 flex flex-wrap gap-x-12 gap-y-7 rise rise-4">
+            <dl className="mt-11 grid grid-cols-1 sm:grid-cols-3 gap-6 rise rise-4">
               <div>
-                <dd className="mono text-2xl font-semibold text-navy">{PUB_COUNT}</dd>
+                <dd className="mono text-xl font-semibold text-navy whitespace-nowrap">{PUB_COUNT}</dd>
                 <dt className="mt-1 text-[0.82rem] font-medium text-navy">Publications</dt>
-                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">since 2018</p>
+                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">{CITATIONS} citations · Scholar</p>
               </div>
               <div>
-                <dd className="mono text-2xl font-semibold text-navy">{CITATIONS}</dd>
-                <dt className="mt-1 text-[0.82rem] font-medium text-navy">Citations</dt>
-                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">Google Scholar</p>
-              </div>
-              <div>
-                <dd className="mono text-2xl font-semibold text-navy">Li · Na · ASSB</dd>
+                <dd className="mono text-xl font-semibold text-navy whitespace-nowrap">Li · Na · ASSB</dd>
                 <dt className="mt-1 text-[0.82rem] font-medium text-navy">Battery systems</dt>
-                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">lithium · sodium · solid-state</p>
+                <p className="mono text-[0.66rem] uppercase tracking-wide text-muted mt-0.5">Li · Na · solid-state</p>
               </div>
               <div>
-                <dd className="mono text-2xl font-semibold text-navy inline-flex items-center gap-2">
-                  <Recycle size={22} className="text-teal" aria-hidden />
+                <dd className="mono text-xl font-semibold text-navy inline-flex items-center gap-1.5 whitespace-nowrap">
+                  <Recycle size={19} className="text-teal" aria-hidden />
                   Closed-loop
                 </dd>
                 <dt className="mt-1 text-[0.82rem] font-medium text-navy">Recycling &amp; upcycling</dt>
-                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">recover · resynthesize · upcycle</p>
+                <p className="mono text-[0.66rem] uppercase tracking-wide text-muted mt-0.5">recover → upcycle</p>
               </div>
             </dl>
           </div>
