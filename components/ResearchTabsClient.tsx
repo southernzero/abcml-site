@@ -51,8 +51,8 @@ export default function ResearchTabsClient({ topics }: { topics: ResearchTopic[]
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={t.cover} alt={t.title} className="w-full h-full object-contain" />
             </div>
-            <div className="p-4 flex items-center gap-2">
-              <span className={`mono text-[0.7rem] ${active === i ? 'text-teal' : 'text-muted'}`}>
+            <div className="p-4 flex items-baseline gap-2">
+              <span className={`mono text-[0.7rem] shrink-0 ${active === i ? 'text-teal' : 'text-muted'}`}>
                 {String(i + 1).padStart(2, '0')}
               </span>
               <span className="font-semibold text-navy text-[0.92rem] leading-snug">{t.title}</span>

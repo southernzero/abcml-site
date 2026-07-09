@@ -32,9 +32,10 @@ export default function HomePage() {
       {/* --- 연구실 소개 + 전주기 사이클 --- */}
       <Section id="overview" title="전주기 통합 연구" eyebrow="What we do">
         <p className="max-w-3xl text-[1.05rem] leading-relaxed text-navy">
-          ABCML은 Li-ion · Na-ion · 전고체 배터리를 아우르는 차세대 시스템에 최적화된 소재를 개발합니다.
-          합성과 분석을 토대로 성능을 끌어올리고, 나아가 소재 재활용까지 확장하는 전주기적 통합 연구로
-          <span className="text-teal font-medium"> 근본적 이해 · 산업적 활용성 · 지속가능성</span>을 동시에 실현합니다.
+          결정 구조와 입자 형상을 원자 단위에서 제어해 고성능 양극 소재를 설계하고, 전자현미경·X-선 분광 등
+          다각적 분석으로 열화 메커니즘을 규명하며, 사용 후 배터리의 회수·재합성·업사이클링까지 아우릅니다.
+          소재의 탄생부터 순환까지 — <span className="text-teal font-medium">근본적 이해 · 산업적 활용성 · 지속가능성</span>을
+          한 연구실에서 함께 추구합니다.
         </p>
 
         <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -80,7 +81,7 @@ export default function HomePage() {
 
       {/* --- News --- */}
       <Section title="News" eyebrow="Latest">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className={`grid gap-5 ${latestNews.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 max-w-2xl'}`}>
           {latestNews.map((n) => (
             <Link
               key={n.id}

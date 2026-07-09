@@ -32,15 +32,6 @@ https://doi.org/10.1038/s41565-025-02092-y
 본 기술은 향후 차세대 초급속 충전 배터리 및 고출력 밀도가 요구되는 미래 모빌리티 에너지원 개발에 핵심적인 지표가 될 것으로 기대됩니다.
 `,
   },
-  {
-    id: "2025-09-01",
-    title: "To be updated",
-    date: "2025-09-01",
-    summary: "To be updated",
-    image: "/images/news/2025-09-01.jpg",
-    body: "상세 내용 준비 중입니다.",
-  },
-
 ];
 export function getNewsById(id: string) {
   return news.find((n) => n.id === id);
