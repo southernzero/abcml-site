@@ -41,11 +41,11 @@ export default function Hero() {
               </Link>
             </div>
 
-            <dl className="mt-11 grid grid-cols-1 sm:grid-cols-3 gap-6 rise rise-4">
+            <dl className="mt-11 flex flex-wrap gap-x-12 gap-y-6 rise rise-4">
               <div>
                 <dd className="mono text-xl font-semibold text-navy whitespace-nowrap">{PUB_COUNT}</dd>
                 <dt className="mt-1 text-[0.82rem] font-medium text-navy">Publications</dt>
-                <p className="mono text-[0.66rem] uppercase tracking-wider text-muted mt-0.5">{CITATIONS} citations · Scholar</p>
+                <p className="mono text-[0.66rem] uppercase tracking-wide text-muted mt-0.5">{CITATIONS} citations</p>
               </div>
               <div>
                 <dd className="mono text-xl font-semibold text-navy whitespace-nowrap">Li · Na · ASSB</dd>
