@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/abcml-logo-compact.png" alt="ABCML" className="h-8 w-auto" />
+            <img src="/abcml-logo-compact-trans.png" alt="ABCML" className="h-8 w-auto" />
             <p className="mt-3">Advanced Battery &amp; Cathode Materials Lab</p>
             <p className="mt-1">인하대학교 이차전지융합학과 · 화학공학과</p>
             <p className="mt-1">인천 미추홀구 인하로 100, 인하대학교 2북관 591호</p>

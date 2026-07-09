@@ -134,8 +134,9 @@ export default function HomePage() {
                 <h2 className="mt-4 text-[1.7rem] md:text-[2.1rem] font-bold" style={{ fontFamily: 'var(--font-display)' }}>
                   대학원생 · 공동연구를 찾습니다
                 </h2>
-                <p className="mt-3 max-w-lg text-white/70 leading-relaxed">
-                  배터리 소재에 진심인 연구자를 환영합니다. 입학 및 공동연구 문의는 이메일로 연락 주세요.
+                <p className="mt-3 max-w-lg text-white/70 leading-relaxed text-balance">
+                  배터리 소재에 진심인 연구자를 환영합니다. 입학 및 공동연구 문의는{' '}
+                  <span className="whitespace-nowrap">이메일로 연락 주세요.</span>
                 </p>
                 <ul className="mt-6 space-y-1.5 text-sm text-white/85">
                   <li><span className="mono text-white/50 mr-2">E</span> nypark@inha.ac.kr</li>

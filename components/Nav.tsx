@@ -21,7 +21,7 @@ export default function Nav() {
         <div className="nav-logo">
           <Link href="/" aria-label="ABCML — Advanced Battery & Cathode Materials Lab, 홈">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/abcml-logo-compact.png" alt="ABCML" />
+            <img src="/abcml-logo-compact-trans.png" alt="ABCML" />
           </Link>
         </div>
 
