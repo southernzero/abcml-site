@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Recycle } from 'lucide-react';
+import HeroLoop from './HeroLoop';
 import { publications } from '@/data/publications';
 import { scholar } from '@/data/scholar';
 
@@ -63,18 +63,11 @@ export default function Hero() {
             </dl>
           </div>
 
-          {/* --- 우: 시각물 슬롯 — 지금은 연구실 로고 (추후 박교수님 동적 이미지로 교체) --- */}
+          {/* --- 우: 대표 비주얼 — 소재 전주기 순환 루프 애니메이션 --- */}
           <div className="rise rise-3">
-            <figure className="hero-visual mx-auto w-full max-w-[440px]">
-              <div className="hero-logo-panel">
-                <Image
-                  src="/abcml-logo.png"
-                  alt="ABCML — Advanced Battery & Cathode Materials Lab"
-                  width={720}
-                  height={334}
-                  priority
-                  className="w-full max-w-[320px] h-auto"
-                />
+            <figure className="hero-visual mx-auto w-full max-w-[480px]">
+              <div className="loop-panel">
+                <HeroLoop />
               </div>
             </figure>
           </div>

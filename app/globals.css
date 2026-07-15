@@ -201,6 +201,82 @@
   50%      { opacity: 0.9;  transform: scale(1.05); }
 }
 
+/* ---------- 히어로 대표 비주얼: 소재 전주기 순환 루프 (HeroLoop) ----------
+   소재 합성 → 전지 제작 → EV·ESS 활용 → 재활용 → (다시 합성) closed-loop */
+.loop-panel {
+  position: relative;
+  border-radius: 1.75rem;
+  border: 1px solid var(--color-line);
+  background:
+    radial-gradient(120% 100% at 50% 0%, var(--color-teal-soft), transparent 72%),
+    #ffffff;
+  padding: 1.2rem;
+  box-shadow: 0 30px 72px -34px rgba(20, 48, 61, 0.30);
+}
+.loop-stage {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+.loop-ring { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+
+.loop-track { fill: none; stroke: var(--color-line); stroke-width: 1.3; }
+.loop-flow {
+  fill: none; stroke: var(--color-teal); stroke-width: 1.7;
+  stroke-linecap: round; stroke-dasharray: 1.8 7; opacity: 0.9;
+  animation: loopDash 2.6s linear infinite;
+}
+@keyframes loopDash { to { stroke-dashoffset: -17.6; } }
+
+/* 순환하는 소재 입자(발광) — 링 위를 시계방향으로 궤도 운동 */
+.loop-orbit {
+  transform-box: view-box; transform-origin: 50% 50%;
+  animation: loopSpin 13s linear infinite;
+}
+.loop-orbit.b { animation-delay: -6.5s; }
+.loop-orbit.c { animation-delay: -9.75s; }
+@keyframes loopSpin { to { transform: rotate(360deg); } }
+.loop-particle { fill: var(--color-teal); filter: url(#loopGlow); }
+
+/* 단계 노드 (아이콘 배지 + 라벨) — 위치는 컴포넌트에서 오각형으로 인라인 지정 */
+.loop-node {
+  position: absolute; transform: translate(-50%, -50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.46rem;
+  width: 118px; text-align: center;
+}
+.loop-badge {
+  width: 78px; height: 78px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #ffffff; color: var(--color-navy);
+  border: 1.5px solid var(--color-line);
+  box-shadow: 0 10px 22px -12px rgba(20, 48, 61, 0.35);
+  animation: loopBadge 3.4s ease-in-out infinite;
+}
+@keyframes loopBadge {
+  0%, 100% { border-color: var(--color-line); box-shadow: 0 10px 22px -12px rgba(20, 48, 61, 0.35); }
+  50%      { border-color: var(--color-teal); box-shadow: 0 12px 26px -8px rgba(47, 163, 123, 0.55); }
+}
+.loop-label { font-size: 0.94rem; font-weight: 600; line-height: 1.2; color: var(--color-navy); }
+.loop-sub {
+  display: block; font-family: var(--font-mono); font-size: 0.66rem;
+  letter-spacing: 0.09em; color: var(--color-muted); margin-top: 3px;
+}
+
+/* 중앙 라벨 */
+.loop-center {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  text-align: center; pointer-events: none; line-height: 1.25;
+}
+.loop-center-main {
+  font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.13em; color: var(--color-teal);
+}
+.loop-center-sub {
+  display: block; font-size: 0.74rem; color: var(--color-muted); margin-top: 3px;
+}
+
 @keyframes riseIn {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
