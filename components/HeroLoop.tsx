@@ -13,7 +13,7 @@ const STAGES = [
   { Icon: FlaskConical, label: '소재 합성', sub: 'SYNTHESIS' },
   { Icon: Microscope, label: '소재 평가·분석', sub: 'ANALYSIS' },
   { Icon: BatteryCharging, label: '셀 제조', sub: 'CELL' },
-  { Icon: Car, label: 'EV · ESS 활용', sub: 'USE' },
+  { Icon: Car, label: 'EV · ESS · UAM 활용', sub: 'USE' },
   { Icon: Recycle, label: '재활용', sub: 'RECYCLE' },
 ] as const;
 
@@ -26,7 +26,7 @@ export default function HeroLoop() {
         className="loop-ring"
         viewBox="0 0 100 100"
         role="img"
-        aria-label="소재 합성, 소재 평가·분석, 셀 제조, EV·ESS 활용, 재활용으로 순환하는 양극 소재 전주기 루프"
+        aria-label="소재 합성, 소재 평가·분석, 셀 제조, EV·ESS·UAM 활용, 재활용으로 순환하는 양극 소재 전주기 루프"
       >
         <defs>
           <filter id="loopGlow" x="-80%" y="-80%" width="260%" height="260%">
