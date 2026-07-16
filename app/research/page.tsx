@@ -52,9 +52,9 @@ const topics: ResearchTopic[] = [
             en: 'Surface modification suppresses parasitic reactions and the layered-to-rocksalt transition at the cathode–sulfide-electrolyte interface while promoting Li⁺ diffusion and stable contact.' } },
       
             { src: '/research/solid/03.jpg', 
-        title: '파우치타입 고성능 전고체 전지 구현 (High-Performance Pouch-Type ASSBs)', 
-        text: { ko: '실험실 수준을 넘어 실제 적용성을 검증하기 위해, 건식 전극 공정(dry electrode fabrication)과 고로딩(high-loading) 조건을 적용한 파우치셀 제작 연구를 수행합니다.', 
-        en: 'We validate scalability with dry-processed, high-loading pouch-type all-solid-state cells for high-energy, safe ASSBs.' } },
+        title: '고성능 전고체 전지 구현 (High-Performance All-Solid-State Batteries)',
+        text: { ko: '실험실 수준을 넘어 실제 적용성을 검증하기 위해, 건식 전극 공정(dry electrode fabrication)과 고로딩(high-loading) 조건을 적용한 전고체 셀 제작 연구를 수행합니다.',
+        en: 'We validate scalability with dry-processed, high-loading all-solid-state cells for high-energy, safe ASSBs.' } },
     ],
   },
   {
@@ -62,12 +62,7 @@ const topics: ResearchTopic[] = [
     title: 'Recycling & Upcycling of Battery Materials',
     cover: '/research/recycle/cover.jpg',
     sections: [
-      { src: '/research/recycle/01.jpg', 
-        title: '이차전지 리사이클링 공정 연구', 
-        text: { ko: '사용 후 배터리에서 유가 금속을 효율적으로 회수하기 위한 리사이클링 공정을 연구합니다. 친환경 습식 제련(hydrometallurgy) 및 건식 제련(pyrometallurgy) 공정뿐만 아니라, 전해 침전, 용매 추출 등 다양한 공정을 활용하여 니켈, 코발트, 망간, 리튬 등 핵심 금속을 고효율·저에너지 방식으로 회수하는 전략을 개발합니다. 이를 통해 차세대 전지 산업의 지속가능한 자원순환 체계를 구축하는 데 기여합니다.', 
-          en: 'We recover Ni, Co, Mn, and Li from spent batteries at high efficiency via hydro-/pyrometallurgy, solvent extraction, and low-energy separation — building a circular economy.' } },
-      
-          { src: '/research/recycle/02.jpg', 
+          { src: '/research/recycle/02.jpg',
             title: '회수 금속 용액을 이용한 양극 소재 재합성', 
             text: { ko: '리사이클링 공정을 통해 얻어진 금속 용액을 활용하여 Ni-rich 계열 양극재 등 고성능 소재를 재합성하는 연구를 수행합니다. 회수 금속의 불순물 제어, 조성 최적화, 그리고 수산화물 전구체 합성을 통한 고품질 양극재 제조 기술을 개발하여, 회수 자원이 신규 자원과 동등한 수준의 성능을 발휘할 수 있도록 합니다.', 
               en: 'From recovered metal solutions we resynthesize Ni-rich cathodes that match virgin-material performance through impurity control and precursor synthesis.' } },
