@@ -51,7 +51,8 @@ jobs:
                 exit 0
               fi
               echo "⚠️ push 거부됨 (시도 $i/3) — origin/main 위로 rebase 후 재시도"
-              git pull --rebase origin main
+              # --autostash: 커밋 대상 외 잔여 변경이 있어도 rebase가 중단되지 않도록
+              git pull --rebase --autostash origin main
               sleep $((i * 5))
             done
             echo "::error::3회 재시도 후에도 push 실패"
