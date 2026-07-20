@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # rebase 재시도를 위해 전체 히스토리 필요 (shallow면 rebase 실패)
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -34,6 +37,16 @@ jobs:
           else
             git add data/scholar.json
             git commit -m "chore: sync citations from Google Scholar [skip ci]"
-            git push
-            echo "✅ data/scholar.json 업데이트 후 푸시 완료"
+            # 같은 시각 sync-publications 잡과 main push 경합 → rebase 후 재시도
+            for i in 1 2 3; do
+              if git push; then
+                echo "✅ data/scholar.json 업데이트 후 푸시 완료"
+                exit 0
+              fi
+              echo "⚠️ push 거부됨 (시도 $i/3) — origin/main 위로 rebase 후 재시도"
+              git pull --rebase origin main
+              sleep $((i * 5))
+            done
+            echo "::error::3회 재시도 후에도 push 실패"
+            exit 1
           fi

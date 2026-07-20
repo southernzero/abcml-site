@@ -2,8 +2,9 @@ name: Sync publications from ORCID
 
 on:
   schedule:
-    # 매주 월요일 한국 시각 09:00 (UTC 00:00)
-    - cron: '0 0 * * 1'
+    # 매주 월요일 한국 시각 09:30 (UTC 00:30)
+    # sync-scholar(09:00)와 시각을 어긋나게 두어 main push 경합을 1차 방지
+    - cron: '30 0 * * 1'
   workflow_dispatch: # 수동 트리거 (Actions 탭에서 "Run workflow" 버튼)
 
 permissions:
@@ -15,6 +16,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # rebase 재시도를 위해 전체 히스토리 필요 (shallow면 rebase 실패)
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -40,6 +44,16 @@ jobs:
           else
             git add data/publications.json
             git commit -m "chore: sync publications from ORCID [skip ci]"
-            git push
-            echo "✅ data/publications.json 업데이트 후 푸시 완료"
+            # 같은 시각 sync-scholar 잡과 main push 경합 → rebase 후 재시도
+            for i in 1 2 3; do
+              if git push; then
+                echo "✅ data/publications.json 업데이트 후 푸시 완료"
+                exit 0
+              fi
+              echo "⚠️ push 거부됨 (시도 $i/3) — origin/main 위로 rebase 후 재시도"
+              git pull --rebase origin main
+              sleep $((i * 5))
+            done
+            echo "::error::3회 재시도 후에도 push 실패"
+            exit 1
           fi
