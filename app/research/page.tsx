@@ -1,8 +1,16 @@
 // app/research/page.tsx
+import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import Section from '@/components/Section';
 import Footer from '@/components/Footer';
 import ResearchTabsClient, { ResearchTopic } from '@/components/ResearchTabsClient';
+
+export const metadata: Metadata = {
+  title: 'Research · 연구 분야',
+  description:
+    'ABCML 연구 분야 — 리튬·나트륨 이차전지 고성능 양극 소재, 전고체전지 맞춤형 소재, 폐배터리 리사이클링·업사이클링 연구.',
+  alternates: { canonical: '/research' },
+};
 
 const topics: ResearchTopic[] = [
   {

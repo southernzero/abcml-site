@@ -1,6 +1,14 @@
+import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import Section from '@/components/Section';
 import Footer from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: '박남영 교수 (Nam-Yung Park) · Principal Investigator',
+  description:
+    '인하대학교 차세대전지소재연구실(ABCML) 박남영 교수 소개 — 학력, 경력, 연구 관심 분야 (양극 소재 결정구조·입자형상 제어, 전고체전지, 리사이클링).',
+  alternates: { canonical: '/professor' },
+};
 
 const INTERESTS = [
   '고성능 양극 소재 개발을 위한 결정구조·입자형상 제어 기술',

@@ -64,6 +64,35 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+// 연구실을 하나의 기관 엔티티로 인식시키는 구조화 데이터 (검색 결과 통합·사이트링크 유도)
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ResearchOrganization',
+  name: 'Advanced Battery & Cathode Materials Lab (ABCML)',
+  alternateName: ['ABCML', '차세대전지소재연구실'],
+  url: 'https://abcml.vercel.app',
+  logo: 'https://abcml.vercel.app/abcml-logo.png',
+  parentOrganization: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Inha University',
+    alternateName: '인하대학교',
+  },
+  founder: {
+    '@type': 'Person',
+    name: 'Nam-Yung Park',
+    alternateName: '박남영',
+    jobTitle: 'Assistant Professor',
+    email: 'nypark@inha.ac.kr',
+  },
+  knowsAbout: [
+    'cathode materials',
+    'lithium-ion battery',
+    'sodium-ion battery',
+    'all-solid-state battery',
+    'battery recycling',
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
@@ -79,7 +108,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
         />
       </head>
-      <body className="font-sans bg-background text-foreground">{children}</body>
+      <body className="font-sans bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

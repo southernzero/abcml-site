@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import Section from '@/components/Section';
@@ -6,6 +7,10 @@ import Link from 'next/link';
 import { notices } from '@/data/notices';
 import { news } from '@/data/news';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 const CYCLE = [
   ['01', 'Synthesis', '합성', '전구체·조성 설계와 결정 성장'],

@@ -18,6 +18,7 @@ export async function generateMetadata(
   return {
     title: item.title,
     description: item.summary ?? item.title,
+    alternates: { canonical: `/notices/${id}` },
   };
 }
 

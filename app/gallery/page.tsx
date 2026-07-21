@@ -1,10 +1,17 @@
 // app/gallery/page.tsx
+import type { Metadata } from 'next';
 import fs from 'fs';
 import path from 'path';
 import Nav from '@/components/Nav';
 import Section from '@/components/Section';
 import Footer from '@/components/Footer';
 import GalleryClient from '@/components/GalleryClient';
+
+export const metadata: Metadata = {
+  title: 'Gallery · 연구실 사진',
+  description: '인하대학교 차세대전지소재연구실(ABCML)의 활동 사진 갤러리.',
+  alternates: { canonical: '/gallery' },
+};
 
 type Meta = { title?: string; date?: string; place?: string };
 type CaptionEntry = { file: string } & Meta;
