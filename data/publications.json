@@ -1,7 +1,7 @@
 {
-  "syncedAt": "2026-08-17T02:03:18.533Z",
+  "syncedAt": "2026-08-24T02:07:26.439Z",
   "orcidId": "0000-0002-7626-5801",
-  "count": 36,
+  "count": 37,
   "works": [
     {
       "putCode": 214046854,
@@ -20,6 +20,15 @@
       "year": 2026,
       "doi": "10.1038/s41565-025-02092-y",
       "link": "https://doi.org/10.1038/s41565-025-02092-y"
+    },
+    {
+      "putCode": 224253392,
+      "title": "Ni‐Rich Cathodes for High‐Energy All‐Solid‐State Batteries Suppressing Phase‐Gradients",
+      "authors": "Sung‐Min Park/Hun Kim/Keun‐Hee Kim/Nam‐Yung Park/Dong‐Hyuk Hwang/Min‐Jin Jang/Geon‐Tae Park/Myung‐Chan Kim/Kyung Yoon Chung/Hun‐Gi Jung/Yang‐Kook Sun",
+      "journal": "Advanced Energy Materials",
+      "year": 2026,
+      "doi": "10.1002/aenm.71455",
+      "link": "https://doi.org/10.1002/aenm.71455"
     },
     {
       "putCode": 214046601,
