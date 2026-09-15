@@ -8,6 +8,7 @@ export type ResearchTopic = {
   sections: {
     src: string;
     title?: string;
+    titleEn?: string;                  // 한글 제목 아래 줄에 붙는 영문 제목
     text: { ko: string; en: string };  // 한/영 동시 표기
   }[];
 };
@@ -89,7 +90,14 @@ export default function ResearchTabsClient({ topics }: { topics: ResearchTopic[]
               {/* 오른쪽: 텍스트(한/영) */}
               <div className="card p-6 flex flex-col justify-center">
                 <p className="eyebrow mb-3">{String(i + 1).padStart(2, '0')}</p>
-                {s.title && <div className="font-semibold text-navy mb-3 leading-snug">{s.title}</div>}
+                {(s.title || s.titleEn) && (
+                  <div className="mb-3">
+                    {s.title && <div className="font-semibold text-navy leading-snug">{s.title}</div>}
+                    {s.titleEn && (
+                      <div className="mt-1 font-normal text-[0.86rem] leading-snug text-muted">{s.titleEn}</div>
+                    )}
+                  </div>
+                )}
                 <p className="text-[0.92rem] leading-relaxed text-navy whitespace-pre-line">{s.text.ko}</p>
                 <p className="mt-4 pt-4 border-t border-line text-[0.86rem] leading-relaxed text-muted whitespace-pre-line">
                   {s.text.en}
@@ -114,10 +122,13 @@ export default function ResearchTabsClient({ topics }: { topics: ResearchTopic[]
               alt={secs[lightbox.idx].title ?? 'image'}
               className="w-full h-auto max-h-[80vh] object-contain rounded-xl"
             />
-            {secs[lightbox.idx].title && (
+            {(secs[lightbox.idx].title || secs[lightbox.idx].titleEn) && (
               <div className="absolute left-0 right-0 bottom-0 m-3">
                 <div className="inline-block rounded-lg bg-white/90 px-3 py-1 text-xs text-gray-800 shadow">
                   {secs[lightbox.idx].title}
+                  {secs[lightbox.idx].titleEn && (
+                    <span className="block text-gray-500">{secs[lightbox.idx].titleEn}</span>
+                  )}
                 </div>
               </div>
             )}
