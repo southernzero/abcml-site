@@ -50,9 +50,9 @@ const topics: ResearchTopic[] = [
     cover: '/research/solid/cover.jpg',
     sections: [
       { src: '/research/solid/01.jpg', 
-        title: '전고체전지 맞춤형 양극 소재 입자 형상 제어 (Structural Engineering of Cathodes for ASSB)', 
-        text: { ko: '전고체전지 시스템에서 양극재는 충방전 과정에서의 비등방성 격자 팽창과 미세균열로 인해 전극-전해질 간 이온 전도 경로가 단절되는 문제가 발생합니다. 본 연구실은 1차 입자의 막대형(radially aligned rod-type) 형상 제어 전략을 활용하여, 전고체전지에서 발생하는 내부 입자 고립과 용량 저하를 억제하는 연구를 수행하고 있습니다. 이러한 미세구조 최적화는 장수명 ASSB 구현의 핵심 열쇠입니다 .', 
-          en: 'We engineer radially aligned rod-type primary particles via Nb doping to suppress microcracking and capacity fading in all-solid-state batteries (ASSBs).' } },
+        title: '전고체전지 맞춤형 양극 소재 개발 (Cathode Materials Tailored for All-Solid-State Batteries)', 
+        text: { ko: '전고체전지 시스템에서 양극재는 충방전 과정에서의 비등방성 격자 팽창과 미세균열로 인해 전극-전해질 간 이온 전도 경로가 단절되는 문제가 발생합니다. 본 연구실은 조성 설계와 도핑, 1차 입자의 형상·배향 제어를 포함한 다양한 전략을 활용하여, 전고체전지에서 발생하는 내부 입자 고립과 용량 저하를 억제하는 연구를 수행하고 있습니다. 이러한 맞춤형 양극 소재 설계는 장수명 ASSB 구현의 핵심 열쇠입니다.', 
+          en: 'We develop cathode materials tailored for all-solid-state batteries (ASSBs) through composition design, doping, and control of primary-particle shape and orientation, suppressing microcracking, particle isolation, and capacity fading.' } },
       
         { src: '/research/solid/02.jpg', 
           title: '양극/전해질 계면 안정화 연구 (Cathode–Electrolyte Interfacial Stabilization)', 
