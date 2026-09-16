@@ -26,10 +26,10 @@ export const currentMemberGroups: MemberGroup[] = [
   {
     title: 'Undergraduate Researchers',
     items: [
-      { name: '유하은 (Ha-Eun Yoo)', role: '', image: '/members/유하은.jpg' },
-      { name: '황준연 (Jun-Yeon Hwang)', role: '', image: '/members/황준연.jpg' },
-      { name: '허윤성 (Yun-Seong Heo)', role: '', image: '/members/허윤성.jpg' },
-      { name: '최윤서 (Yun-Seo Choi)', role: '', image: '/members/최윤서.jpg' },
+      { name: '유하은 (Yoo Haeun)', role: '', image: '/members/유하은.jpg' },
+      { name: '황준연 (Hwang JunYeon)', role: '', image: '/members/황준연.jpg' },
+      { name: '허윤성 (Heo Yunseong)', role: '', image: '/members/허윤성.jpg' },
+      { name: '최윤서 (Choi Yunseo)', role: '', image: '/members/최윤서.jpg' },
     ],
   },
 ];
