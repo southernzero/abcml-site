@@ -38,7 +38,7 @@ export default function MemberCard({ m }: { m: Member }) {
 
       <div className="p-4 border-t border-line">
         <div className="font-semibold text-navy">{m.name}</div>
-        <div className="text-[0.82rem] font-medium text-teal mt-1 leading-snug">{m.role}</div>
+        {m.role && <div className="text-[0.82rem] font-medium text-teal mt-1 leading-snug">{m.role}</div>}
         {m.note && <div className="text-[0.78rem] text-muted mt-1">{m.note}</div>}
 
         {(m.email || m.link) && (

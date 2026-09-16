@@ -26,7 +26,10 @@ export const currentMemberGroups: MemberGroup[] = [
   {
     title: 'Undergraduate Researchers',
     items: [
-      { name: '모집중', role: 'UG', note: '학부연구생' },
+      { name: '유하은 (Ha-Eun Yoo)', role: '', image: '/members/유하은.jpg' },
+      { name: '황준연 (Jun-Yeon Hwang)', role: '', image: '/members/황준연.jpg' },
+      { name: '허윤성 (Yun-Seong Heo)', role: '', image: '/members/허윤성.jpg' },
+      { name: '최윤서 (Yun-Seo Choi)', role: '', image: '/members/최윤서.jpg' },
     ],
   },
 ];
