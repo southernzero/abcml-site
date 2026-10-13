@@ -51,6 +51,10 @@ export default function ProfessorPage() {
                   <dd><a href="mailto:nypark@inha.ac.kr" className="text-teal hover:underline">nypark@inha.ac.kr</a></dd>
                 </div>
                 <div className="flex gap-3">
+                  <dt className="mono text-[0.68rem] uppercase tracking-wider text-muted pt-0.5 w-14 shrink-0">Office</dt>
+                  <dd className="text-ink leading-snug">인하대학교 60주년기념관 1121호</dd>
+                </div>
+                <div className="flex gap-3">
                   <dt className="mono text-[0.68rem] uppercase tracking-wider text-muted pt-0.5 w-14 shrink-0">Scholar</dt>
                   <dd>
                     <a href="https://scholar.google.co.kr/citations?user=tlvfJbMAAAAJ" target="_blank" rel="noopener noreferrer" className="text-teal hover:underline">
